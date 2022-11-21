@@ -11,18 +11,33 @@ function App() {
 
   const colHeaders = [
     { field: 'id',      headerName: 'ID',     width: 80,   editable: false},
-    { field: 'field_0', headerName: 'Month',  width: 100,  editable: true },
-    { field: 'field_1', headerName: 'Temp0',  width: 100,  editable: true },
-    { field: 'field_2', headerName: 'Temp1',  width: 100,  editable: true },
+    { field: 'field_1', headerName: 'Month',  width: 100,  editable: true },
+    { field: 'field_2', headerName: 'Temp0',  width: 100,  editable: true },
+    { field: 'field_3', headerName: 'Temp1',  width: 100,  editable: true },
   ]
 
-  const [row_0_field_1, set_row_0_field_1] = useState(15)
 
-  const rows = [
-    { id: 0, field_0: 'Jun', field_1: row_0_field_1,  field_2: 10},
-    { id: 1, field_0: 'Jul', field_1: 7,              field_2: 1},
-    { id: 2, field_0: 'Aug', field_1: 20,             field_2: 7},
-  ]
+  const [rows, setRows] = useState([
+    { id: 0, field_1: 'Jun', field_2: 15,  field_3: 10},
+    { id: 1, field_1: 'Jul', field_2: 7,   field_3: 1},
+    { id: 2, field_1: 'Aug', field_2: 20,  field_3: 7},
+  ])
+
+  const updateRows = (rows, field, id, value) => { // c = field_n
+    const updatedRows = []
+    rows.map((row) => {
+      if (row.id === id) {
+        let modifiedRow = {...row, [field]: value}
+        updatedRows.push(modifiedRow)
+        console.log(field)
+      } else {
+        updatedRows.push(row)
+      }
+    })
+    console.log(updatedRows)
+    setRows(updatedRows)
+  }
+
 
   // map INPUT DATA to chart
 
@@ -30,8 +45,8 @@ function App() {
   const labels = rows.map(row => row[Object.keys(row)[1]])
 
   const data = [
-    { id: 0, label: colHeaders[2].headerName, data: rows.map(row => row.field_1)}, 
-    { id: 1, label: colHeaders[3].headerName, data: rows.map(row => row.field_2)}, 
+    { id: 0, label: colHeaders[2].headerName, data: rows.map(row => row.field_2)}, 
+    { id: 1, label: colHeaders[3].headerName, data: rows.map(row => row.field_3)}, 
   ]
 
   return (
@@ -45,7 +60,8 @@ function App() {
             rowsPerPageOptions={[10]}
             experimentalFeatures={{ newEditingApi: true }}
             onCellEditStop={(params, event) => {
-              set_row_0_field_1(event.target.value)
+              console.log(params.field, params.id, event.target.value)
+              updateRows(rows, params.field, params.id, event.target.value)
             }}
           />
         </Box>
