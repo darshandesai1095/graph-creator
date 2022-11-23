@@ -1,0 +1,6 @@
+sections:
+1 data + generate random data
+2 headings (title, axis, legend)
+3 colors/customize
+4 download/share
+5 reset
