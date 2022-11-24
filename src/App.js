@@ -61,29 +61,27 @@ function App() {
     <div className="App">
 
       <div className='main-content'>
-
-        <Box sx={{ height: 300, width: 800 }}>
-          <DataGrid
-            rows={rows}
-            columns={colHeaders}
-            pageSize={10}
-            rowsPerPageOptions={[10]}
-            experimentalFeatures={{ newEditingApi: true }}
-            onCellEditStop={(params, event) => {
-              updateRows(rows, params.field, params.id, event.target.value)
-            }}
-          />
-        </Box>
-
         <BarChart datasets={data}
-                  labels = {labels}
-                  width = {'200px'}
+                    labels={labels}
         />
-    
       </div>
 
       <div className='sidebar'>
-        <CustomizedAccordions />
+        <CustomizedAccordions>
+          <Box sx={{ height: '50vh', width: 360 }}>
+            <DataGrid
+              rows={rows}
+              columns={colHeaders}
+              pageSize={10}
+              rowsPerPageOptions={[10]}
+              experimentalFeatures={{ newEditingApi: true }}
+              onCellEditStop={(params, event) => {
+                updateRows(rows, params.field, params.id, event.target.value)
+              }}
+            />
+          </Box>
+        </CustomizedAccordions>
+        
       </div>
 
     </div>

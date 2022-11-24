@@ -17,11 +17,13 @@ import { red } from '@mui/material/colors';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} sx={{
-        backgroundColor: '#f5efff',
-        color: 'black'
+        backgroundColor: 'red',
+        color: '#red',
+        margin: '10px'
     }}/>
 ))(({ theme }) => ({
-  border: `3px solid white`,
+  border: `1px solid green`,
+  borderRadius: '10px',
   '&:not(:last-child)': {
     borderBottom: 0,
   },
@@ -34,7 +36,7 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
-    expandIcon={<AddIcon sx={{ fontSize: '1rem', color: '#7371fc' }} />}
+    expandIcon={<AddIcon sx={{ fontSize: '1rem', color: 'white' }} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -56,72 +58,102 @@ const AccordionSummary = styled((props) => (
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   backgroundColor: 'white',
   padding: theme.spacing(2),
-  borderTop: '1px solid white',
 }));
 
 
 
-export default function CustomizedAccordions() {
+export default function CustomizedAccordions({children}) {
 
-    
+
 
   return (
     <div>
-      <Accordion expanded={true}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Data</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
 
-      <Accordion>
-        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Headings</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
+        <Accordion>
+            <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+            <Typography>Charts</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                    malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+                    lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+        </Accordion>
 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+        <Accordion>
+            <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+            <Typography>Data</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                {children}
+            </AccordionDetails>
+        </Accordion>
 
-        </AccordionDetails>
-      </Accordion>
+        <Accordion>
+            <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+            <Typography>Title</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
+                dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+                lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+        </Accordion>
 
-      <Accordion>
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Themes</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+        <Accordion>
+            <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+            <Typography>Axis</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
+                dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+                lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+        </Accordion>
 
-      <Accordion>
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Download</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+        <Accordion>
+            <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+            <Typography>Legend</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
+                dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+                lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+        </Accordion>
+
+        <Accordion>
+            <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+            <Typography>Styling</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+            <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
+                dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+                lacus ex, sit amet blandit leo lobortis eget.
+            </Typography>
+            </AccordionDetails>
+        </Accordion>
+
+        <Accordion>
+            <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+            <Typography>Download</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+            <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
+                dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+                lacus ex, sit amet blandit leo lobortis eget.
+            </Typography>
+            </AccordionDetails>
+        </Accordion>
+
     </div>
   );
 }

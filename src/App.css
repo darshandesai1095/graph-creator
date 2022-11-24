@@ -5,22 +5,29 @@
 }
 
 .App {
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  border: 1px solid red;
-
+  background-color: #E2EAFC;
 }
 
 .main-content {
-  border: 1px solid red;
+  min-width: 500px;
   flex-grow: 1;
+  background-color: white;
+  margin-right: 15px;
+  padding: 30px;
+  padding-right: 40px;
+  border: 2px solid white;
+  border-radius: 10px;
 }
 
 .sidebar {
-  border: 1px solid red;
-  width: 30vw;
+  width: 400px;
+  height: 70vh;
+  background-color: blue;
+  border-radius: 10px;
 }
