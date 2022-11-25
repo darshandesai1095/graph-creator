@@ -3,7 +3,6 @@ import { useState } from 'react';
 import BarChart from './Charts/BarChart.js'
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import CustomizedAccordions from './Accordion.js'
 
 
 function App() {
@@ -61,14 +60,17 @@ function App() {
     <div className="App">
 
       <div className='main-content'>
-        <BarChart datasets={data}
-                    labels={labels}
-        />
+        <div className='main-content__chart'>
+          <BarChart datasets={data}
+                      labels={labels}
+                  
+
+          />
+        </div>
       </div>
 
       <div className='sidebar'>
-        <CustomizedAccordions>
-          <Box sx={{ height: '50vh', width: 360 }}>
+          {/* <Box sx={{ height: '50vh', width: 360 }}>
             <DataGrid
               rows={rows}
               columns={colHeaders}
@@ -79,8 +81,7 @@ function App() {
                 updateRows(rows, params.field, params.id, event.target.value)
               }}
             />
-          </Box>
-        </CustomizedAccordions>
+          </Box> */}
         
       </div>
 

@@ -5,29 +5,32 @@
 }
 
 .App {
-  padding: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  background-color: #E2EAFC;
 }
 
 .main-content {
-  min-width: 500px;
   flex-grow: 1;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content__chart {
+  border: 1px solid #ced4da;
+  padding:20px;
   background-color: white;
-  margin-right: 15px;
-  padding: 30px;
-  padding-right: 40px;
-  border: 2px solid white;
-  border-radius: 10px;
+  display: inline-block;
 }
 
 .sidebar {
-  width: 400px;
-  height: 70vh;
-  background-color: blue;
-  border-radius: 10px;
+  width: 350px;
+  height: 100vh;
+  background-color: white;
+  padding: 10px;
+  margin-right: 15px;
 }
