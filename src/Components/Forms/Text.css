@@ -1,0 +1,18 @@
+.text-form > input {
+    border-radius: 7px;
+    height: 25px;
+    border: 1px solid #ced4da;
+    padding-left: 7px;
+    margin: 0;
+}
+
+.text-form > input:hover {
+    background-color: #f8f9fa;
+    outline: none;
+}
+
+.text-form > input:focus {
+    border: 1px solid #5465ff;
+    background-color: #f8f9fa;
+    outline: none;
+}

@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import '../../CSS/Fieldsets.css'
-import Switch from '@mui/material/Switch';
+import '../../Components/Fieldsets/Fieldsets.css'
+import CustomizedSwitch from "../MUIComponents/CustomizedSwitch";
+import TextForm from "../Forms/Text";
 
 function TitleFieldset() {
-
 
     return (
         <div class='fieldset'>
             <div class='field'>
                 <h2>Title</h2>
-                <Switch defaultChecked />
+                <CustomizedSwitch defaultChecked />
             </div>
             <div class='field'>
                 <p>Title</p> 
+                <div className="field__text">
+                    <TextForm placeholder='Enter Title'/>
+                </div>
             </div>
             <div class='field'>
                 <p>Font</p>

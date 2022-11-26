@@ -8,8 +8,8 @@
 }
 
 h2 {
-    color: #343a40;
-    padding: 0 0 15px 0;
+    color: #212529;
+    padding: 0 0 0px 0;
     font-size: 1rem;
 }
 
@@ -18,9 +18,16 @@ h2 {
     color: #6c757d;
     font-weight: bold;
     font-size: 0.9rem;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .field:last-of-type {
     padding-bottom: 10px
+}
+
+.field__text {
+    margin-top: -5px;
 }

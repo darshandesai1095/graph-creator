@@ -6,9 +6,15 @@
 
 .App {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
   width: 100vw;
+  height: 100vh;
+}
+
+.navigation {
+  background-color: red;
+  width: 50px;
   height: 100vh;
 }
 
