@@ -37,7 +37,7 @@
   width: 400px;
   height: 100vh;
   background-color: white;
-  padding: 10px;
   overflow-y: scroll;
+  border-right: 1.5px solid #e9ecef;
 }
 

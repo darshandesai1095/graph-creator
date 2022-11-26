@@ -1,0 +1,26 @@
+.fieldset {
+    font-family: 'Trebuchet MS', sans-serif;
+    border-top: 1.5px solid #e9ecef;
+    border-bottom: 1.5px solid #e9ecef;
+    padding: 15px 20px;
+    display: grid
+
+}
+
+h2 {
+    color: #343a40;
+    padding: 0 0 15px 0;
+    font-size: 1rem;
+}
+
+.field {
+    padding: 15px 0;
+    color: #6c757d;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 1px solid red;
+}
+
+.field:last-of-type {
+    padding-bottom: 10px
+}
