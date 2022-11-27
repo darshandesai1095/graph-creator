@@ -1,33 +1,38 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
+import * as SS from '../Functions/CreateSpreasheet';
+
 
 
 function Spreadsheet() {
 
+  console.log(SS.setColumns())
+  console.log(SS.setRows())
+
   // INPUT DATA -> e.g. csv, pasted, typed, etc
   // these have to be created using useState as the can be updated
 
-  const [colHeaders, setColHeaders] = useState([
-    { field: 'id',      headerName: ' ', width: 50,  editable: false,   headerAlign: 'center', },
-    { field: 'field_1', headerName: 'A', width: 80,  editable: true,    headerAlign: 'center', },
-    { field: 'field_2', headerName: 'B', width: 80,  editable: true,    headerAlign: 'center', },
-    { field: 'field_3', headerName: 'C', width: 80,  editable: true,    headerAlign: 'center', },
-    { field: 'field_4', headerName: 'E', width: 80,  editable: true,    headerAlign: 'center', },
-    { field: 'field_5', headerName: 'F', width: 80,  editable: true,    headerAlign: 'center', },
-    { field: 'field_6', headerName: 'G', width: 80,  editable: true,    headerAlign: 'center', },
-    { field: 'field_7', headerName: 'H', width: 80,  editable: true,    headerAlign: 'center', },
-  ])
+  const [colHeaders, setColHeaders] = useState(SS.setColumns())
+  //   { field: 'id',      headerName: ' ', width: 50,  editable: false,   headerAlign: 'center', },
+  //   { field: 'field_1', headerName: 'A', width: 80,  editable: true,    headerAlign: 'center', },
+  //   { field: 'field_2', headerName: 'B', width: 80,  editable: true,    headerAlign: 'center', },
+  //   { field: 'field_3', headerName: 'C', width: 80,  editable: true,    headerAlign: 'center', },
+  //   { field: 'field_4', headerName: 'E', width: 80,  editable: true,    headerAlign: 'center', },
+  //   { field: 'field_5', headerName: 'F', width: 80,  editable: true,    headerAlign: 'center', },
+  //   { field: 'field_6', headerName: 'G', width: 80,  editable: true,    headerAlign: 'center', },
+  //   { field: 'field_7', headerName: 'H', width: 80,  editable: true,    headerAlign: 'center', },
+  // ])
 
 
-  const [rows, setRows] = useState([
-    { id: 1, field_1: '1', field_2: 12,    field_3: 10, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-    { id: 2, field_1: '2', field_2: 7,     field_3: 1,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-    { id: 3, field_1: '3', field_2: 20,    field_3: 7,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-    { id: 4, field_1: '4', field_2: 14,    field_3: 10, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-    { id: 5, field_1: '5', field_2: 15,    field_3: 12, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-    { id: 6, field_1: '6', field_2: 9,     field_3: 8,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-  ])
+  const [rows, setRows] = useState(SS.setRows())
+  //   { id: 1, field_1: '1', field_2: 12,    field_3: 10, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
+  //   { id: 2, field_1: '2', field_2: 7,     field_3: 1,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
+  //   { id: 3, field_1: '3', field_2: 20,    field_3: 7,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
+  //   { id: 4, field_1: '4', field_2: 14,    field_3: 10, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
+  //   { id: 5, field_1: '5', field_2: 15,    field_3: 12, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
+  //   { id: 6, field_1: '6', field_2: 9,     field_3: 8,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
+  // ])
 
   const updateRows = (rows, field, id, value) => {
     const updatedRows = []
@@ -62,7 +67,7 @@ function Spreadsheet() {
             <DataGrid
               rows={rows}
               columns={colHeaders}
-              pageSize={10}
+              pageSize={20}
               rowsPerPageOptions={[10]}
               experimentalFeatures={{ newEditingApi: true }}
               onCellEditStop={(params, event) => {
