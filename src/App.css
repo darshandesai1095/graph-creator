@@ -13,37 +13,57 @@
 }
 
 .navigation {
-  background-color: red;
+  background-color: white;
   width: 50px;
   height: 100vh;
+  border-right: 1.5px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #6c757d;
+  padding-top: 20px;
+}
+
+.navigation > div {
+  margin-bottom: 5px;
+}
+
+.navigation > div:hover {
+  color: #5465ff;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  border-radius: 5px;
 }
 
 .main-content {
   flex-grow: 1;
   background: #f8f9fa;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .main-content__chart {
   border: 1px solid #ced4da;
   height: 500px;
-  width: 1000px;
+  width: 900px;
   padding: 20px;
   background-color: white;
   display: inline-block;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
 }
 
 .sidebar {
-  width: 400px;
+  width: 350px;
   height: 100vh;
   background-color: white;
   overflow-y: scroll;
   border-right: 1.5px solid #e9ecef;
+}
+
+.test {
+  color: #65C466
 }
 
