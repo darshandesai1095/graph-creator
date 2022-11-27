@@ -55,15 +55,11 @@
   align-items: center;
 }
 
+
 .sidebar {
-  width: 350px;
+  min-width: 350px;
   height: 100vh;
   background-color: white;
   overflow-y: scroll;
   border-right: 1.5px solid #e9ecef;
 }
-
-.test {
-  color: #65C466
-}
-

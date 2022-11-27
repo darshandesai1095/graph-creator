@@ -5,9 +5,14 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import Fieldset from './Components/Fieldsets/TitleFieldset';
 import Navigation from './Components/Navigation';
+import Spreadsheet from './Components/Spreadsheet';
+import { setColumns, setRows } from './Functions/CreateSpreasheet';
 
 
 function App() {
+
+  //console.log(setColumns())
+  console.log(setRows())
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
   // these have to be created using useState as the can be updated
@@ -64,7 +69,7 @@ function App() {
       <Navigation/>
 
       <div className='sidebar'>
-          {/* <Box sx={{ height: '50vh', width: 360 }}>
+          <Box sx={{ height: '50vh', width: 360 }}>
             <DataGrid
               rows={rows}
               columns={colHeaders}
@@ -75,7 +80,7 @@ function App() {
                 updateRows(rows, params.field, params.id, event.target.value)
               }}
             />
-          </Box> */}
+          </Box>
 
           <Fieldset/>
           <Fieldset/>
@@ -85,11 +90,17 @@ function App() {
       </div>
 
       <div className='main-content'>
-        <div className='main-content__chart'>
+        
+        {/* <div className='main-content__chart'>
           <BarChart datasets={data}
                       labels={labels}
           />
+        </div> */}
+
+        <div className='main-content__spreadsheet'>
+          <Spreadsheet/>
         </div>
+
       </div>
 
     </div>
