@@ -45,7 +45,6 @@
 
 .main-content__chart {
   border: 1px solid #ced4da;
-  height: 500px;
   width: 900px;
   padding: 20px;
   background-color: white;
@@ -53,8 +52,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  border: 1px solid red;
 }
 
+.chart__title {
+  border: 1px solid red;
+}
 
 .sidebar {
   min-width: 350px;

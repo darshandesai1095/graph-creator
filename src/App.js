@@ -7,6 +7,8 @@ import Fieldset from './Components/Fieldsets/TitleFieldset';
 import Navigation from './Components/Navigation';
 import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
+import {Chart, Title, Legend} from 'chart.js'
+
 
 
 function App() {
@@ -64,6 +66,7 @@ function App() {
     { id: 3, label: colHeaders[4].headerName, data: rows.map(row => row.field_4)}, 
     { id: 4, label: colHeaders[5].headerName, data: rows.map(row => row.field_5)}, 
     { id: 5, label: colHeaders[6].headerName, data: rows.map(row => row.field_6)}, 
+    { id: 6, label: colHeaders[7].headerName, data: rows.map(row => row.field_7)}, 
   ]
 
   return (
@@ -94,15 +97,21 @@ function App() {
 
       <div className='main-content'>
         
-        {/* <div className='main-content__chart'>
+        <div className='main-content__chart'>
+          <h3 className='chart__title'
+              style={{alignSelf: 'flex-end',
+                      paddingBottom: '10px',
+                      paddingTop: '10px'}}
+              >title</h3>
           <BarChart datasets={data}
                       labels={labels}
+                      options={{}}
           />
-        </div> */}
-
-        <div className='main-content__spreadsheet'>
-          <Spreadsheet/>
         </div>
+
+        {/* <div className='main-content__spreadsheet'>
+          <Spreadsheet/>
+        </div> */}
 
       </div>
 
