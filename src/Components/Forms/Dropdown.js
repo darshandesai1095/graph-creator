@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../../Components/Forms/Text.css'
+import './Text.css'
 import { useDispatch } from 'react-redux'
 
 function DropdownForm(props) {
@@ -8,17 +8,14 @@ function DropdownForm(props) {
 
     return (
         <form className="text-form">
-            <select name="cars" id="cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+            <select 
+                 onChange={(event) => dispatch(props.setValue(event.target.value))}>
+
+                     {props.list.map(item => (
+                        <option value={item}>{item}</option>
+                     ))}
+
             </select>
-            {/* <input
-                type='text'
-                value={props.inputValue.title}
-                onChange={(event) => dispatch(props.setValue(event.target.value))}
-                placeholder={props.placeholder}/> */}
         </form>
     )
 }

@@ -1,12 +1,15 @@
-.text-form > input {
+.text-form > input,
+.text-form > select {
     border-radius: 7px;
     height: 25px;
     border: 1px solid #ced4da;
-    padding-left: 7px;
+    padding-left: 10px;
     margin: 0;
+    width: 140px;
 }
 
-.text-form > input:hover {
+.text-form > input:hover,
+.text-form > select:hover {
     background-color: #f8f9fa;
     outline: none;
 }
@@ -15,4 +18,13 @@
     border: 1px solid #5465ff;
     background-color: #f8f9fa;
     outline: none;
+}
+
+.text-form > select:focus {
+    outline: none;
+}
+
+.text-form > select {
+    margin-top: -1px;
+    padding-left: 6px;
 }

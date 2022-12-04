@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-import textInputReducer from './features/Title.js'
+import textInputReducer from './features/TitleSlice.js'
 
 export const store = configureStore({
   reducer: {

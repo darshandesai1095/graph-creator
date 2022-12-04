@@ -4,7 +4,7 @@ import CustomizedSwitch from "../MUIComponents/CustomizedSwitch";
 import TextForm from "../Forms/Text";
 
 import { useSelector } from 'react-redux'
-import { setTitle } from '../../features/Title'
+import { setTitle } from '../../features/TitleSlice'
 
 function KeyFieldset() {
 

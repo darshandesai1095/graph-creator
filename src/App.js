@@ -18,7 +18,7 @@ function App() {
   console.log(SS.setColumns())
   console.log(SS.setRows())
 
-  const textInputValue = useSelector((state) => state.textInput.value.title)
+  const titleField = useSelector((state) => state.textInput.value)
 
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
@@ -105,8 +105,10 @@ function App() {
           <h3 className='chart__title'
               style={{alignSelf: 'flex-end',
                       paddingBottom: '10px',
-                      paddingTop: '10px'}}
-              >{textInputValue}</h3>
+                      paddingTop: '10px',
+                      fontFamily: `${titleField.font}`,
+                      fontSize: `${titleField.fontSize}px`}}
+              >{titleField.title}</h3>
           <BarChart datasets={data}
                       labels={labels}
                       options={{}}

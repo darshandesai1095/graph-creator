@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../../Components/Forms/Text.css'
+import './Text.css'
 import { useDispatch } from 'react-redux'
 
 function TextForm(props) {
@@ -7,10 +7,10 @@ function TextForm(props) {
     const dispatch = useDispatch()
 
     return (
-        <form className="text-form">
+        <form className="text-form" onSubmit={(e) => e.preventDefault()}>
             <input
                 type='text'
-                value={props.inputValue.title}
+                value={props.inputValue}
                 onChange={(event) => dispatch(props.setValue(event.target.value))}
                 placeholder={props.placeholder}/>
         </form>
