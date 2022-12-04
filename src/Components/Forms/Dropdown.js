@@ -7,8 +7,8 @@ function DropdownForm(props) {
     const dispatch = useDispatch()
 
     return (
-        <form className="text-form">
-            <select 
+        <form className={`text-form ${props.formSize}`}>
+            <select value={props.defautValue}
                  onChange={(event) => dispatch(props.setValue(event.target.value))}>
 
                      {props.list.map(item => (

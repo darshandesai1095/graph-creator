@@ -103,7 +103,7 @@ function App() {
         
         <div className='main-content__chart'>
           <h3 className='chart__title'
-              style={{alignSelf: 'flex-end',
+              style={{position: `${titleField.position}`,
                       paddingBottom: '10px',
                       paddingTop: '10px',
                       fontFamily: `${titleField.font}`,

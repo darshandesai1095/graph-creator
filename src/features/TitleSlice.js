@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {value: {
   title: "",
-  font: "Times New Roman",
+  font: "Baskerville",
   color: "coral",
   fontSize: 20,
-  position: ""
+  position: "right"
 }}
 
 export const textInputSlice = createSlice({
@@ -23,11 +23,14 @@ export const textInputSlice = createSlice({
       state.value.color = action.payload
     },
     setFontSize: (state, action) => {
-      state.value.color = action.payload
+      state.value.fontSize = action.payload
+    },
+    setPosition: (state, action) => {
+      state.value.position = action.payload
     }
   }
 })
 
-export const { setTitle, setFont, setColor, setFontSize } = textInputSlice.actions
+export const { setTitle, setFont, setColor, setFontSize, setPosition } = textInputSlice.actions
 
 export default textInputSlice.reducer

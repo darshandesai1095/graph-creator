@@ -5,7 +5,16 @@
     border: 1px solid #ced4da;
     padding-left: 10px;
     margin: 0;
-    width: 140px;
+}
+
+.small > select {
+    padding-left: 10px;
+    width: 55px;
+}
+
+.medium > select {
+    padding-left: 10px;
+    width: 150px;
 }
 
 .text-form > input:hover,
