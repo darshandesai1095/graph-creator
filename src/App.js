@@ -3,11 +3,13 @@ import { useState } from 'react';
 import BarChart from './Charts/BarChart.js'
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import Fieldset from './Components/Fieldsets/TitleFieldset';
+import TitleFieldset from './Components/Fieldsets/TitleFieldset';
+import KeyFieldset from './Components/Fieldsets/KeyFieldset';
 import Navigation from './Components/Navigation';
 import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
 import {Chart, Title, Legend} from 'chart.js'
+import { useSelector } from 'react-redux'
 
 
 
@@ -15,6 +17,8 @@ function App() {
 
   console.log(SS.setColumns())
   console.log(SS.setRows())
+
+  const textInputValue = useSelector((state) => state.textInput.value.title)
 
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
@@ -75,7 +79,7 @@ function App() {
       <Navigation/>
 
       <div className='sidebar'>
-          <Box sx={{ height: '50vh', width: 360 }}>
+          {/* <Box sx={{ height: '50vh', width: 360 }}>
             <DataGrid
               rows={rows}
               columns={colHeaders}
@@ -86,12 +90,12 @@ function App() {
                 updateRows(rows, params.field, params.id, event.target.value)
               }}
             />
-          </Box>
+          </Box> */}
 
-          <Fieldset/>
-          <Fieldset/>
-          <Fieldset/>
-          <Fieldset/>
+          <TitleFieldset/>
+          <KeyFieldset/>
+          <TitleFieldset/>
+          <TitleFieldset/>
         
       </div>
 
@@ -102,7 +106,7 @@ function App() {
               style={{alignSelf: 'flex-end',
                       paddingBottom: '10px',
                       paddingTop: '10px'}}
-              >title</h3>
+              >{textInputValue}</h3>
           <BarChart datasets={data}
                       labels={labels}
                       options={{}}

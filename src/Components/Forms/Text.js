@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import '../../Components/Forms/Text.css'
+import { useDispatch } from 'react-redux'
 
 function TextForm(props) {
 
-    const [input, setInput] = useState(null)
-    const handleChange = (event) => {
-        setInput(event.value)
-    }
+    const dispatch = useDispatch()
 
     return (
         <form className="text-form">
             <input
                 type='text'
-                value={input}
-                onChange={handleChange}
+                value={props.inputValue.title}
+                onChange={(event) => dispatch(props.setValue(event.target.value))}
                 placeholder={props.placeholder}/>
         </form>
     )

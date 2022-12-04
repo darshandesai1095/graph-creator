@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import '../../Components/Fieldsets/Fieldsets.css'
 import CustomizedSwitch from "../MUIComponents/CustomizedSwitch";
 import TextForm from "../Forms/Text";
-import DropdownForm from "../Forms/Dropdown";
 
 import { useSelector } from 'react-redux'
 import { setTitle } from '../../features/Title'
 
-function TitleFieldset() {
+function KeyFieldset() {
 
     const textInputValue = useSelector((state) => state.textInput.value)
 
     return (
         <div class='fieldset'>
             <div class='field'>
-                <h2>Title</h2>
+                <h2>Key</h2>
                 <CustomizedSwitch defaultChecked />
             </div>
             <div class='field'>
@@ -28,12 +27,6 @@ function TitleFieldset() {
             </div>
             <div class='field'>
                 <p>Font</p>
-                <div className="field__text">
-                    <DropdownForm
-                        inputValue = {textInputValue}
-                        setValue = {setTitle}
-                        placeholder='Enter Title'/>
-                </div>
             </div>
             <div class='field'>
                 <p>Text Style</p>
@@ -45,4 +38,4 @@ function TitleFieldset() {
     )
 }
 
-export default TitleFieldset
+export default KeyFieldset

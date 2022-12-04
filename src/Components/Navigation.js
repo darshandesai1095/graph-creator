@@ -7,12 +7,14 @@ import Tooltip from '@mui/material/Tooltip';
 
 function Navigation() {
 
+    const style = {transform: 'scale(1)', margin: '5px', marginTop: '7px'}
+
     return (
         <div className='navigation'>
 
             <div>
                 <Tooltip title="Select Chart" arrow placement='right'>
-                    <CategoryIcon sx={{transform: 'scale(1.1)', margin: '5px', marginTop: '7px'}}/>
+                    <CategoryIcon sx={style}/>
                 </Tooltip>
             </div>
             <div>
