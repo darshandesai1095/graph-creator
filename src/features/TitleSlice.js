@@ -3,9 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {value: {
   title: "",
   font: "Baskerville",
-  color: "coral",
+  color: "black",
   fontSize: 20,
-  position: "right"
+  position: "start",
+  paddingTop: 0,
+  paddingBottom: 0,
+  paddingLeft: 0,
+  paddingRight: 20
 }}
 
 export const textInputSlice = createSlice({
@@ -27,10 +31,24 @@ export const textInputSlice = createSlice({
     },
     setPosition: (state, action) => {
       state.value.position = action.payload
+    },
+
+    setPaddingTop: (state, action) => {
+      state.value.paddingTop = action.payload
+    },
+    setPaddingBottom: (state, action) => {
+      state.value.paddingBottom = action.payload
+    },
+    setPaddingLeft: (state, action) => {
+      state.value.paddingLeft = action.payload
+    },
+    setPaddingRight: (state, action) => {
+      state.value.paddingRight = action.payload
     }
   }
 })
 
-export const { setTitle, setFont, setColor, setFontSize, setPosition } = textInputSlice.actions
+export const { setTitle, setFont, setColor, setFontSize, setPosition,
+               setPaddingTop, setPaddingBottom, setPaddingLeft, setPaddingRight } = textInputSlice.actions
 
 export default textInputSlice.reducer

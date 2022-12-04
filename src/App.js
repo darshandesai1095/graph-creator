@@ -103,11 +103,15 @@ function App() {
         
         <div className='main-content__chart'>
           <h3 className='chart__title'
-              style={{position: `${titleField.position}`,
-                      paddingBottom: '10px',
-                      paddingTop: '10px',
+              style={{alignSelf: `${titleField.position}`,
+                      paddingTop: `${titleField.paddingTop}px`,
+                      paddingBottom: `${titleField.paddingBottom}px`,
+                      paddingLeft: `${titleField.paddingLeft}px`,
+                      paddingRight: `${titleField.paddingRight}px`,
                       fontFamily: `${titleField.font}`,
-                      fontSize: `${titleField.fontSize}px`}}
+                      fontSize: `${titleField.fontSize}px`,
+                      color: `${titleField.color}`}
+                    }
               >{titleField.title}</h3>
           <BarChart datasets={data}
                       labels={labels}

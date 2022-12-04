@@ -1,10 +1,12 @@
 .text-form > input,
 .text-form > select {
     border-radius: 7px;
-    height: 25px;
+    height: 30px;
     border: 1px solid #ced4da;
     padding-left: 10px;
-    margin: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin: 0px;
 }
 
 .small > select {
@@ -37,3 +39,24 @@
     margin-top: -1px;
     padding-left: 6px;
 }
+
+.color-picker > input {
+    width: 30px;
+    padding: 1px;
+    background-color: white;
+    margin: 0px;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+.color-picker > input:focus {
+    border: 1px solid #D7DCE1;
+    background-color: #f8f9fa;
+}
+
+.color-picker {
+    position: absolute;
+    right: 85px;
+    top: 184px
+}
+

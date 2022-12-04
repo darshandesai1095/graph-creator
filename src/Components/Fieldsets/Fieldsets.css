@@ -3,8 +3,8 @@
     border-top: 1.5px solid #e9ecef;
     border-bottom: 1.5px solid #e9ecef;
     padding: 15px 20px;
-    display: grid
-
+    display: grid;
+    position: relative;
 }
 
 h2 {
@@ -18,7 +18,6 @@ h2 {
     color: #6c757d;
     font-weight: bold;
     font-size: 0.85rem;
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -30,4 +29,10 @@ h2 {
 
 .field__text {
     margin-top: -5px;
+}
+
+p {
+    padding-top: 5px;
+    padding-bottom: 0px;
+    margin: 0px;
 }

@@ -3,9 +3,11 @@ import '../../Components/Fieldsets/Fieldsets.css'
 import CustomizedSwitch from "../MUIComponents/CustomizedSwitch";
 import TextForm from "../Forms/Text";
 import DropdownForm from "../Forms/Dropdown";
+import ColorPickerForm from "../Forms/ColorPicker";
 
 import { useSelector } from 'react-redux'
-import { setTitle, setFont, setFontSize, setPosition } from '../../features/TitleSlice'
+import { setTitle, setFont, setColor, setFontSize, setPosition,
+    setPaddingTop, setPaddingBottom, setPaddingLeft, setPaddingRight } from '../../features/TitleSlice'
 
 function TitleFieldset() {
 
@@ -17,7 +19,11 @@ function TitleFieldset() {
     for (let i=8; i<=30; i++) {
         fontSizeList.push(i)
     }
-    const alignmentList = ["Left", "Center", "Right"]
+    const alignmentList = ["Start", "Center", "End"]
+    const paddingList = []
+    for (let i=0; i<=30; i++) {
+        paddingList.push(i)
+    }
 
     return (
         <div class='fieldset'>
@@ -50,6 +56,9 @@ function TitleFieldset() {
 
             <div class='field'>
                 <p>Text Style</p>
+                <ColorPickerForm 
+                    setValue = {setColor}
+                    defautValue = {titleField.color}/>
                 <div className="field__text">
                     <DropdownForm
                         list={fontSizeList}
@@ -61,16 +70,39 @@ function TitleFieldset() {
 
             <div class='field'>
                 <p>Position</p>
-                <div className="field__text">
                     <DropdownForm
                         list={alignmentList}
                         setValue = {setPosition}
+                        defautValue = {titleField.position}
                         formSize = "medium" />
-                </div>
             </div>
 
             <div class='field'>
-                <p>Padding</p>
+                <p>Padding Top / Bottom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <DropdownForm
+                        list={paddingList}
+                        setValue = {setPaddingTop}
+                        defautValue = {titleField.paddingTop}
+                        formSize = "small" />
+                     <DropdownForm
+                        list={paddingList}
+                        setValue = {setPaddingBottom}
+                        defautValue = {titleField.paddingBottom}
+                        formSize = "small" />
+            </div>
+
+            <div class='field'>
+                <p>Padding Left / Right &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <DropdownForm
+                        list={paddingList}
+                        setValue = {setPaddingLeft}
+                        defautValue = {titleField.paddingLeft}
+                        formSize = "small" />
+                    <DropdownForm
+                        list={paddingList}
+                        setValue = {setPaddingRight}
+                        defautValue = {titleField.paddingRight}
+                        formSize = "small" />
             </div>
 
         </div>
