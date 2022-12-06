@@ -13,26 +13,26 @@ function KeyFieldset() {
     return (
         <div class='fieldset'>
             <div class='field'>
-                <h2>Key</h2>
+                <h2>Legend</h2>
                 <CustomizedSwitch defaultChecked />
-            </div>
-            <div class='field'>
-                <p>Title</p> 
-                <div className="field__text">
-                    <TextForm
-                        inputValue = {textInputValue}
-                        setValue = {setTitle}
-                        placeholder='Enter Title'/>
-                </div>
             </div>
             <div class='field'>
                 <p>Font</p>
             </div>
             <div class='field'>
-                <p>Text Style</p>
+                <p>Pointer Style</p>
+            </div>
+            <div class='field'>
+                <p>Box Width / Height</p> 
+            </div>
+            <div class='field'>
+                <p>Box Padding</p>
             </div>
             <div class='field'>
                 <p>Position</p>
+            </div>
+            <div class='field'>
+                <p>Align</p>
             </div>
         </div>
     )

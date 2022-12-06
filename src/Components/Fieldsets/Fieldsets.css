@@ -14,8 +14,8 @@ h2 {
 }
 
 .field {
-    padding: 15px 0;
-    color: #6c757d;
+    padding: 12px 0;
+    color: rgba(108, 117, 125, 0.75);
     font-weight: bold;
     font-size: 0.85rem;
     display: flex;

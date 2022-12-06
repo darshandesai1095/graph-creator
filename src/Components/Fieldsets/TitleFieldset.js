@@ -19,7 +19,7 @@ function TitleFieldset() {
     for (let i=8; i<=30; i++) {
         fontSizeList.push(i)
     }
-    const alignmentList = ["Start", "Center", "End"]
+    const alignmentList = ["start", "center", "end"]
     const paddingList = []
     for (let i=0; i<=30; i++) {
         paddingList.push(i)
@@ -88,20 +88,6 @@ function TitleFieldset() {
                         list={paddingList}
                         setValue = {setPaddingBottom}
                         defautValue = {titleField.paddingBottom}
-                        formSize = "small" />
-            </div>
-
-            <div class='field'>
-                <p>Padding Left / Right &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                    <DropdownForm
-                        list={paddingList}
-                        setValue = {setPaddingLeft}
-                        defautValue = {titleField.paddingLeft}
-                        formSize = "small" />
-                    <DropdownForm
-                        list={paddingList}
-                        setValue = {setPaddingRight}
-                        defautValue = {titleField.paddingRight}
                         formSize = "small" />
             </div>
 

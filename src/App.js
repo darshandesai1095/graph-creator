@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react';
+import { React, useState } from 'react';
 import BarChart from './Charts/BarChart.js'
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
@@ -8,9 +8,27 @@ import KeyFieldset from './Components/Fieldsets/KeyFieldset';
 import Navigation from './Components/Navigation';
 import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
-import {Chart, Title, Legend} from 'chart.js'
+// import {Chart, Title, Legend} from 'chart.js'
 import { useSelector } from 'react-redux'
 
+import { Bar, Pie } from 'react-chartjs-2'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 
 function App() {
@@ -79,7 +97,7 @@ function App() {
       <Navigation/>
 
       <div className='sidebar'>
-          {/* <Box sx={{ height: '50vh', width: 360 }}>
+          <Box sx={{ height: '50vh', width: 360 }}>
             <DataGrid
               rows={rows}
               columns={colHeaders}
@@ -90,7 +108,7 @@ function App() {
                 updateRows(rows, params.field, params.id, event.target.value)
               }}
             />
-          </Box> */}
+          </Box>
 
           <TitleFieldset/>
           <KeyFieldset/>
@@ -101,8 +119,8 @@ function App() {
 
       <div className='main-content'>
         
-        <div className='main-content__chart'>
-          <h3 className='chart__title'
+       <div className='main-content__chart'>
+<h3 className='chart__title'
               style={{alignSelf: `${titleField.position}`,
                       paddingTop: `${titleField.paddingTop}px`,
                       paddingBottom: `${titleField.paddingBottom}px`,
@@ -112,19 +130,94 @@ function App() {
                       fontSize: `${titleField.fontSize}px`,
                       color: `${titleField.color}`}
                     }
-              >{titleField.title}</h3>
-          <BarChart datasets={data}
+              >{}</h3>
+                {/*      <Bar datasets={data}
                       labels={labels}
-                      options={{}}
-          />
+                      height={100}
+                      options={{ 
+
+                      }}
+          /> */}
+
+<div>
+      <Pie
+        data={{
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [
+            {
+              label: '# of votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderWidth: 1,
+            },
+            // {
+            //   label: 'Quantity',
+            //   data: [47, 52, 67, 58, 9, 50],
+            //   backgroundColor: 'orange',
+            //   borderColor: 'red',
+            // },
+          ],
+        }}
+        height={400}
+        width={600}
+        options={{
+          plugins: {
+            title: {
+                display: true,
+                text: `${titleField.title}`,
+                color: `${titleField.color}`,
+                font: {
+                  size: `${titleField.fontSize}`,
+                  family: `${titleField.font}`,
+                },
+                align: `${titleField.position}`,
+                padding: {
+                  top: titleField.paddingTop,
+                  bottom:  titleField.paddingBottom
+              }
+            }},
+          maintainAspectRatio: false,
+          // scales: {
+          //   yAxes: [
+          //     {
+          //       ticks: {
+          //         beginAtZero: true,
+          //       },
+          //     },
+          //   ],
+          // },
+          // legend: {
+          //   labels: {
+          //     fontSize: 5,
+          //   },
+          // },
+        }}
+      />
+    </div>
+
+
         </div>
 
         {/* <div className='main-content__spreadsheet'>
           <Spreadsheet/>
         </div> */}
 
-      </div>
-
+</div>
     </div>
   );
 }

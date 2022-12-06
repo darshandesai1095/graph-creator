@@ -6,10 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import textInputReducer from './features/TitleSlice.js'
+import keyReducer from'./features/KeySlice.js'
 
 export const store = configureStore({
   reducer: {
-    textInput: textInputReducer
+    textInput: textInputReducer,
+    key: keyReducer
   },
 })
 
