@@ -40,23 +40,4 @@
     padding-left: 6px;
 }
 
-.color-picker > input {
-    width: 30px;
-    padding: 1px;
-    background-color: white;
-    margin: 0px;
-    padding-right: 2px;
-    padding-left: 2px;
-}
-
-.color-picker > input:focus {
-    border: 1px solid #D7DCE1;
-    background-color: #f8f9fa;
-}
-
-.color-picker {
-    position: absolute;
-    right: 85px;
-    top: 162.5px
-}
 

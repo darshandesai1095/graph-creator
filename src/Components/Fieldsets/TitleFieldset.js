@@ -57,6 +57,7 @@ function TitleFieldset() {
             <div class='field'>
                 <p>Text Style</p>
                 <ColorPickerForm 
+                    colorPickerClassName = {"title__colorPicker"}
                     setValue = {setColor}
                     defautValue = {titleField.color}/>
                 <div className="field__text">
@@ -78,7 +79,7 @@ function TitleFieldset() {
             </div>
 
             <div class='field'>
-                <p>Padding Top / Bottom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p>Padding Top / Bottom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <DropdownForm
                         list={paddingList}
                         setValue = {setPaddingTop}

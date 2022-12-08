@@ -37,6 +37,7 @@ function App() {
   console.log(SS.setRows())
 
   const titleField = useSelector((state) => state.textInput.value)
+  const keyField = useSelector((state) => state.key.value)
 
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
@@ -179,17 +180,30 @@ function App() {
           plugins: {
             title: {
                 display: true,
-                text: `${titleField.title}`,
-                color: `${titleField.color}`,
+                text: titleField.title,
+                color: titleField.color,
                 font: {
-                  size: `${titleField.fontSize}`,
-                  family: `${titleField.font}`,
+                  size: titleField.fontSize,
+                  family: titleField.font,
                 },
-                align: `${titleField.position}`,
+                align: titleField.position,
                 padding: {
                   top: titleField.paddingTop,
                   bottom:  titleField.paddingBottom
               }
+            },
+            legend: {
+              display: keyField.display,
+              position: 'bottom',
+              pointStyle: 'cross',
+              title: {
+                color: "red",
+                display: true,
+                family: keyField.font,
+                padding: 10,
+                text: "hello"
+              }
+
             }},
           maintainAspectRatio: false,
           // scales: {
@@ -200,11 +214,6 @@ function App() {
           //       },
           //     },
           //   ],
-          // },
-          // legend: {
-          //   labels: {
-          //     fontSize: 5,
-          //   },
           // },
         }}
       />

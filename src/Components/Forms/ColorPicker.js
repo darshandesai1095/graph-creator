@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Text.css'
+import './colorPicker.css'
 import { useDispatch } from 'react-redux'
 
 function ColorPickerForm(props) {
@@ -7,7 +7,7 @@ function ColorPickerForm(props) {
     const dispatch = useDispatch()
 
     return (
-        <form className={`text-form color-picker`}>
+        <form className={`color-picker ${props.colorPickerClassName}`}>
             <input 
                 value = {props.defaultValue}
                 onChange={(event) => dispatch(props.setValue(event.target.value))}

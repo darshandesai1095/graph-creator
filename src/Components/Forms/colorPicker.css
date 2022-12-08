@@ -1,0 +1,17 @@
+.color-picker {
+    background-color: white;
+}
+
+.color-picker > input {
+    width: 30px;
+    padding: 1.5px;
+    border-radius: 7px;
+    height: 30px;
+    border: 1px solid #ced4da;
+    background-color: white;
+}
+
+.color-picker > input:focus {
+    border: 1px solid #D7DCE1;
+    background-color: #f8f9fa;
+}

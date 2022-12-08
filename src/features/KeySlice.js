@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {value: {
     display: true,
-    title: "",
+    title: "testtitle",
     color: 'red',
     font: 'Arial', // delete?
-    pointerStyle: 'circle', 
+    pointStyle: 'circle', 
     boxWidth: '10px',
     boxHeight: '10px',
     textAlign: 'center',
@@ -15,7 +15,6 @@ const initialState = {value: {
 export const keySlice = createSlice({
   name: 'key',
   initialState,
-
   reducers: {
     // setVisibility: (state, action) => {
     //   state.value.title = action.payload
@@ -26,11 +25,14 @@ export const keySlice = createSlice({
     setColor: (state, action) => {
         state.value.color = action.payload
     },
-    // setFont: (state, action) => {
-    //     state.value.font = action.payload
-    // },
-    setPointerStyle: (state, action) => {
-        state.value.pointerStyle = action.payload
+    setFont: (state, action) => {
+        state.value.font = action.payload
+    },
+    setFontSize: (state, action) => {
+        state.value.fontSize = action.payload
+    },
+    setPointStyle: (state, action) => {
+        state.value.pointStyle = action.payload
     },
     setBoxWidth: (state, action) => {
         state.value.boxHeight = action.payload
@@ -47,6 +49,6 @@ export const keySlice = createSlice({
   }
 })
 
-export const { setTitle, setColor, setPointerStyle, setBoxWidth,
+export const { setTitle, setColor, setFont, fontSize,setPointStyle, setBoxWidth,
                setBoxHeight, setTextAlign, setPadding } = keySlice.actions
 export default keySlice.reducer

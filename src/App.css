@@ -55,9 +55,6 @@
   flex-direction: column;
 }
 
-.chart__title {
-}
-
 .sidebar {
   min-width: 350px;
   height: 100vh;

@@ -36,3 +36,18 @@ p {
     padding-bottom: 0px;
     margin: 0px;
 }
+
+.title__colorPicker {
+    position: absolute;
+    top: 162.5px;
+    right: 85px;
+
+}
+
+.key__colorPicker {
+    position: absolute;
+    top: 113.5px;
+    right: 85px;
+
+    
+}
