@@ -10,7 +10,7 @@ import keyReducer from'./features/KeySlice.js'
 
 export const store = configureStore({
   reducer: {
-    textInput: textInputReducer,
+    textInput: textInputReducer, // titleReducer
     key: keyReducer
   },
 })
