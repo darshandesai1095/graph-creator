@@ -3,24 +3,17 @@ import '../../Components/Fieldsets/Fieldsets.css'
 import CustomizedSwitch from "../MUIComponents/CustomizedSwitch";
 import TextForm from "../Forms/Text";
 import DropdownForm from "../Forms/Dropdown";
-import ColorPickerForm from "../Forms/ColorPicker.js";
 
 import { useSelector } from 'react-redux'
-import { setTitle, setColor, setFont, setFontSize, setPointStyle, setBoxWidth,
-    setBoxHeight, setTextAlign, setPadding } from '../../features/TitleSlice'
+import { setTitle, setColor, setFont, setFontSize, setPosition, setPointStyle, setBoxWidth,
+    setBoxHeight, setAlign, setPadding } from '../../features/KeySlice'
 
 function KeyFieldset() {
 
     const textInputValue = useSelector((state) => state.textInput.value)
     const keyField = useSelector((state) => state.key.value)
 
-    const fontList = ["Arial", "Baskerville", "Courier", "Courier New", 
-    "Georgia", "Geneva", "Helvetica", "Impact", "Monospace", 
-    "Palatino", "Tahoma", "Times", "Times New Roman", "Verdana"]
-    const fontSizeList = []
-    for (let i=8; i<=30; i++) {
-        fontSizeList.push(i)
-    }
+    const alignmentList = ["top", "left", "bottom", "right", "chart area"]
 
     return (
         <div class='fieldset'>
@@ -30,40 +23,30 @@ function KeyFieldset() {
             </div>
 
             <div class='field'>
-                <p>Font</p>
-                <div className="field__text">
+                <p>Position</p>
                     <DropdownForm
-                        list={fontList}
-                        setValue = {setFont}
-                        formSize = "medium" 
-                        defautValue = {keyField.font} />
-                </div>
-            </div>
-
-            <div class='field'>
-                <p>Text Style</p>
-                <ColorPickerForm 
-                    colorPickerClassName = {'key__colorPicker'}
-                    setValue = {setColor}
-                    defautValue = {keyField.color}/>
-                <div className="field__text">
-                    <DropdownForm
-                        list={fontSizeList}
-                        setValue = {setFontSize}
-                        formSize = "small" 
-                        defautValue = {keyField.fontSize}/>
-                </div>      
+                        list={alignmentList}
+                        setValue = {setPosition}
+                        defautValue = {keyField.position}
+                        formSize = "medium" />
             </div>
 
             <div class='field'>
                 <p>Shape</p> 
             </div>
             <div class='field'>
-                <p>Box Width/ Hieght</p>
+                <p>Box Width / Height</p>
             </div>
+
             <div class='field'>
-                <p>Text Align</p>
+                <p>Align</p>
+                    <DropdownForm
+                        list={["start", "center", "end"]}
+                        setValue = {setAlign}
+                        defautValue = {keyField.align}
+                        formSize = "medium" />
             </div>
+
             <div class='field'>
                 <p>Padding</p>
             </div>

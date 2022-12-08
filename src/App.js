@@ -120,7 +120,7 @@ function App() {
 
       <div className='main-content'>
         
-       <div className='main-content__chart'>
+      <div className='main-content__chart'>
 <h3 className='chart__title'
               style={{alignSelf: `${titleField.position}`,
                       paddingTop: `${titleField.paddingTop}px`,
@@ -194,16 +194,9 @@ function App() {
             },
             legend: {
               display: keyField.display,
-              position: 'bottom',
+              position: keyField.position,
               pointStyle: 'cross',
-              title: {
-                color: "red",
-                display: true,
-                family: keyField.font,
-                padding: 10,
-                text: "hello"
-              }
-
+              align: keyField.align
             }},
           maintainAspectRatio: false,
           // scales: {
