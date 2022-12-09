@@ -179,25 +179,34 @@ function App() {
         options={{
           plugins: {
             title: {
-                display: true,
-                text: titleField.title,
-                color: titleField.color,
-                font: {
-                  size: titleField.fontSize,
-                  family: titleField.font,
-                },
-                align: titleField.position,
-                padding: {
-                  top: titleField.paddingTop,
-                  bottom:  titleField.paddingBottom
+              display: true,
+              text: titleField.title,
+              color: titleField.color,
+              font: {
+                size: titleField.fontSize,
+                family: titleField.font,
+              },
+              align: titleField.position,
+              padding: {
+                top: titleField.paddingTop,
+                bottom:  titleField.paddingBottom
               }
             },
             legend: {
               display: keyField.display,
               position: keyField.position,
-              pointStyle: 'cross',
-              align: keyField.align
+              pointStyle: keyField.pointStyle,
+              align: keyField.align,
+              pointStyle: keyField.pointStyle,
+              maxWidth: keyField.boxWidth,
+              maxHeight: keyField.boxHeight,
+              padding: keyField.padding,
+              useBorderRadius: true,
+              borderRadius: 10,
+              reverse: keyField.isReversed,
+              color: "red"
             }},
+
           maintainAspectRatio: false,
           // scales: {
           //   yAxes: [

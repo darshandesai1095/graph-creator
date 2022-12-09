@@ -9,7 +9,7 @@ function DropdownForm(props) {
     return (
         <form className={`text-form ${props.formSize}`}>
             <select value={props.defautValue}
-                 onChange={(event) => dispatch(props.setValue(event.target.value))}>
+                 onChange={(event) => dispatch(props.setValue(event.target.value.toLowerCase()))}>
 
                      {props.list.map(item => (
                         <option value={item}>{item}</option>

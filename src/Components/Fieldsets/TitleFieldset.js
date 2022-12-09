@@ -19,7 +19,7 @@ function TitleFieldset() {
     for (let i=8; i<=30; i++) {
         fontSizeList.push(i)
     }
-    const alignmentList = ["start", "center", "end"]
+    const alignmentList = ["Start", "Center", "End"]
     const paddingList = []
     for (let i=0; i<=30; i++) {
         paddingList.push(i)

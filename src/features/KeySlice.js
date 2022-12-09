@@ -7,10 +7,11 @@ const initialState = {value: {
     font: 'Arial', // remove
     position: 'top',
     pointStyle: 'circle', 
-    boxWidth: '10px',
-    boxHeight: '10px',
+    boxWidth: '100',
+    boxHeight: '100',
     align: 'center',
-    padding: 10
+    padding: 10,
+    isReversed: false
 }}
 
 export const keySlice = createSlice({
@@ -39,20 +40,23 @@ export const keySlice = createSlice({
         state.value.pointStyle = action.payload
     },
     setBoxWidth: (state, action) => {
-        state.value.boxHeight = action.payload
+        state.value.boxWidth = action.payload
     },
     setBoxHeight: (state, action) => {
-        state.value.boxWidth = action.payload
+        state.value.boxHeight = action.payload
     },
     setAlign: (state, action) => {
         state.value.align = action.payload
     }, 
     setPadding: (state, action) => {
         state.value.padding = action.payload
-    },   
+    },
+    setIsReversed: (state, action) => {
+        state.value.isReversed = !state.value.isReversed 
+    } 
   }
 })
 
 export const { setTitle, setColor, setFont, fontSize, setPosition, setPointStyle, setBoxWidth,
-               setBoxHeight, setAlign, setPadding } = keySlice.actions
+               setBoxHeight, setAlign, setPadding, setIsReversed } = keySlice.actions
 export default keySlice.reducer
