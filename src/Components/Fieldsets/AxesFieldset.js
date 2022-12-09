@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setTitle, setColor, setFont, setFontSize, setPosition, setPointStyle, setBoxWidth,
     setBoxHeight, setAlign, setPadding, setIsReversed } from '../../features/KeySlice'
 
-function BackgroundFieldset() {
+function AxesFieldset() {
 
     const textInputValue = useSelector((state) => state.textInput.value)
     const keyField = useSelector((state) => state.key.value)
@@ -35,9 +35,10 @@ function BackgroundFieldset() {
     return (
         <div class='fieldset'>
             <div class='field'>
-                <h2>Background</h2>
-
+                <h2>Axes</h2>
+                <CustomizedSwitch defaultChecked />
             </div>
+
 
             <div class='field'>
                 <p>Type</p>
@@ -60,4 +61,4 @@ function BackgroundFieldset() {
     )
 }
 
-export default BackgroundFieldset
+export default AxesFieldset

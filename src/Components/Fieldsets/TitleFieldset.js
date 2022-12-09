@@ -47,6 +47,7 @@ function TitleFieldset() {
                 <p>Font</p>
                 <div className="field__text">
                     <DropdownForm
+                        lowerCase = {false}
                         list={fontList}
                         setValue = {setFont}
                         formSize = "medium" 
@@ -62,6 +63,7 @@ function TitleFieldset() {
                     defautValue = {titleField.color}/>
                 <div className="field__text">
                     <DropdownForm
+                        lowerCase = {false}
                         list={fontSizeList}
                         setValue = {setFontSize}
                         formSize = "small" 
@@ -72,6 +74,7 @@ function TitleFieldset() {
             <div class='field'>
                 <p>Position</p>
                     <DropdownForm
+                        lowerCase = {true}                   
                         list={alignmentList}
                         setValue = {setPosition}
                         defautValue = {titleField.position}

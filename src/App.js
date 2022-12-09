@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import TitleFieldset from './Components/Fieldsets/TitleFieldset';
 import KeyFieldset from './Components/Fieldsets/KeyFieldset';
+import AxesFieldset from './Components/Fieldsets/AxesFieldset';
 import Navigation from './Components/Navigation';
 import BackgroundFieldset from './Components/Fieldsets/BackgroundFieldset';
 import Spreadsheet from './Components/Spreadsheet';
@@ -127,7 +128,7 @@ function App() {
           <TitleFieldset/>
           <KeyFieldset/>
           <BackgroundFieldset/>
-          <TitleFieldset/>
+          <AxesFieldset/>
         
       </div>
 
