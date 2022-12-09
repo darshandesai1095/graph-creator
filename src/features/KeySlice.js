@@ -7,8 +7,6 @@ const initialState = {value: {
     font: 'Arial', // remove
     position: 'top',
     pointStyle: 'circle', 
-    boxWidth: '100',
-    boxHeight: '100',
     align: 'center',
     padding: 10,
     isReversed: false
@@ -38,12 +36,6 @@ export const keySlice = createSlice({
     },
     setPointStyle: (state, action) => {
         state.value.pointStyle = action.payload
-    },
-    setBoxWidth: (state, action) => {
-        state.value.boxWidth = action.payload
-    },
-    setBoxHeight: (state, action) => {
-        state.value.boxHeight = action.payload
     },
     setAlign: (state, action) => {
         state.value.align = action.payload

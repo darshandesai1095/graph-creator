@@ -6,6 +6,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import TitleFieldset from './Components/Fieldsets/TitleFieldset';
 import KeyFieldset from './Components/Fieldsets/KeyFieldset';
 import Navigation from './Components/Navigation';
+import BackgroundFieldset from './Components/Fieldsets/BackgroundFieldset';
 import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
 // import {Chart, Title, Legend} from 'chart.js'
@@ -92,13 +93,25 @@ function App() {
     { id: 6, label: colHeaders[7].headerName, data: rows.map(row => row.field_7)}, 
   ]
 
+  const plugin = {
+    id: 'customCanvasBackgroundColor',
+    beforeDraw: (chart, args, options) => {
+      const {ctx} = chart;
+      ctx.save();
+      ctx.globalCompositeOperation = 'destination-over';
+      ctx.fillStyle = "green"
+      ctx.fillRect(0, 0, chart.width, chart.height);
+      ctx.restore();
+    }
+  };
+
   return (
     <div className="App">
 
       <Navigation/>
 
       <div className='sidebar'>
-          <Box sx={{ height: '50vh', width: 360 }}>
+          {/* <Box sx={{ height: '50vh', width: 360 }}>
             <DataGrid
               rows={rows}
               columns={colHeaders}
@@ -109,11 +122,11 @@ function App() {
                 updateRows(rows, params.field, params.id, event.target.value)
               }}
             />
-          </Box>
+          </Box> */}
 
           <TitleFieldset/>
           <KeyFieldset/>
-          <TitleFieldset/>
+          <BackgroundFieldset/>
           <TitleFieldset/>
         
       </div>
@@ -141,9 +154,9 @@ function App() {
           /> */}
 
 <div>
-      <Pie
+      <Bar
         data={{
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: ['test label', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
           datasets: [
             {
               label: '# of votes',
@@ -198,14 +211,13 @@ function App() {
               pointStyle: keyField.pointStyle,
               align: keyField.align,
               pointStyle: keyField.pointStyle,
-              maxWidth: keyField.boxWidth,
-              maxHeight: keyField.boxHeight,
               padding: keyField.padding,
               useBorderRadius: true,
               borderRadius: 10,
               reverse: keyField.isReversed,
               color: "red"
-            }},
+            },
+          },
 
           maintainAspectRatio: false,
           // scales: {

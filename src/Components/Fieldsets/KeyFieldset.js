@@ -79,19 +79,6 @@ function KeyFieldset() {
 
 
             </div>
-            <div class='field'>
-                <p>Max Width / Height&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                    <DropdownForm
-                        list={widthList}
-                        setValue = {setBoxWidth}
-                        defautValue = {keyField.boxWidth}
-                        formSize = "small" />
-                     <DropdownForm
-                        list={widthList}
-                        setValue = {setBoxHeight}
-                        defautValue = {keyField.boxHeight}
-                        formSize = "small" />
-            </div>
 
             <div class='field'>
                 <p>Reverse</p>
