@@ -7,7 +7,7 @@ const initialState = {value: {
     font: 'Arial', // remove
     position: 'top',
     pointStyle: 'circle', 
-    align: 'center',
+    align: 'Center',
     padding: 10,
     isReversed: false
 }}

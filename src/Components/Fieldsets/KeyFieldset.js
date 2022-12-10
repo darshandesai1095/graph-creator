@@ -14,7 +14,7 @@ function KeyFieldset() {
     const keyField = useSelector((state) => state.key.value)
     const dispatch = useDispatch()
 
-    const alignmentList = ["Top", "Left", "Bottom", "Right", "Chart Area"]
+    const alignmentList = ["top", "Left", "Bottom", "Right", "Chart Area"]
     const widthList = []
     for (let i=0; i<=200; i++) {
         if (i%10 === 0) {
@@ -42,6 +42,7 @@ function KeyFieldset() {
             <div class='field'>
                 <p>Position</p>
                     <DropdownForm
+                        lowerCase = {true}
                         list={alignmentList}
                         setValue = {setPosition}
                         defautValue = {keyField.position}
@@ -51,6 +52,7 @@ function KeyFieldset() {
             <div class='field'>
                 <p>Align</p>
                     <DropdownForm
+                        lowerCase = {true}
                         list={["Start", "Center", "End"]}
                         setValue = {setAlign}
                         defautValue = {keyField.align}

@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setTitle, setColor, setFont, setFontSize, setPosition, setPointStyle, setBoxWidth,
     setBoxHeight, setAlign, setPadding, setIsReversed } from '../../features/KeySlice'
 
-function AxesFieldset() {
+function DescritpionFieldset() {
 
     const textInputValue = useSelector((state) => state.textInput.value)
     const keyField = useSelector((state) => state.key.value)
@@ -36,43 +36,21 @@ function AxesFieldset() {
     return (
         <div class='fieldset'>
             <div class='field'>
-                <h2>Axes</h2>
-                <CustomizedSwitch defaultChecked />
-            </div>
-
-            <div class='field'>
-                <p>Align</p>
-                    <DropdownForm
-                        list={["Start", "Center", "End"]}
-                        setValue = {0}
-                        defautValue = {0}
-                        formSize = "medium" />
+                <h2>Description</h2>
             </div>
 
 
-            <div class='field'>
-                <p>Text</p> 
+            <div class='field__description'>
                 <div className="field__text">
                     <TextForm
-                        inputValue = {0}
-                        setValue = {0}
-                        placeholder='Enter Title'/>
+                        inputValue = {""}
+                        setValue = {""}
+                        placeholder=''/>
                 </div>
             </div>
-
-            <div class='field'>
-                <p>Display Ticks</p>
-                <input 
-                    type="checkbox"
-                    className="key__checkbox"
-                    checked={0}
-                    onChange={0}
-                />
-            </div>
-
 
         </div>
     )
 }
 
-export default AxesFieldset
+export default DescritpionFieldset

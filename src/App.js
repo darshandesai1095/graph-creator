@@ -8,6 +8,7 @@ import KeyFieldset from './Components/Fieldsets/KeyFieldset';
 import AxesFieldset from './Components/Fieldsets/AxesFieldset';
 import Navigation from './Components/Navigation';
 import BackgroundFieldset from './Components/Fieldsets/BackgroundFieldset';
+import DescritpionFieldset from './Components/Fieldsets/DescriptionFieldset';
 import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
 // import {Chart, Title, Legend} from 'chart.js'
@@ -129,6 +130,7 @@ function App() {
           <KeyFieldset/>
           <BackgroundFieldset/>
           <AxesFieldset/>
+          <DescritpionFieldset/>
         
       </div>
 
@@ -155,7 +157,7 @@ function App() {
           /> */}
 
 <div>
-      <Bar
+      <Pie
         data={{
           labels: ['test label', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
           datasets: [

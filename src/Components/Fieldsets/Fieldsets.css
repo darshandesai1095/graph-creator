@@ -55,3 +55,15 @@ p {
     top: 160.5px;
     right: 85px;
 }
+
+.field__description {
+    margin-top: 10px;
+}
+
+.field__description form > input {
+    width: 100%;
+    height: 150px; 
+    line-height: 15px;
+    vertical-align: top;
+
+}
