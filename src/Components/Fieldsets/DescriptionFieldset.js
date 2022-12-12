@@ -4,6 +4,7 @@ import CustomizedSwitch from "../MUIComponents/CustomizedSwitch";
 import DropdownForm from "../Forms/Dropdown";
 import ColorPickerForm from "../Forms/ColorPicker";
 import TextForm from "../Forms/Text";
+import Description from "../Forms/Description";
 
 import { useSelector, useDispatch } from 'react-redux'
 import { setTitle, setColor, setFont, setFontSize, setPosition, setPointStyle, setBoxWidth,
@@ -41,15 +42,8 @@ function DescritpionFieldset() {
 
 
             <div class='field__description'>
-                {/* <div className="field__text">
-                    <TextForm
-                        rows={10}
-                        cols={100}
-                        inputValue = {""}
-                        setValue = {""}
-                        placeholder=''/>
-                </div> */}
-                <textarea class="field__description" rows="10" cols="35"></textarea>
+                <Description
+                    placeholder={"Type chart description here..."}/>
             </div>
 
         </div>

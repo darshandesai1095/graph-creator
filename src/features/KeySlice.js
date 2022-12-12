@@ -5,7 +5,7 @@ const initialState = {value: {
     title: "testtitle", // remove
     color: 'red', // remove
     font: 'Arial', // remove
-    position: 'top',
+    position: 'Top',
     pointStyle: 'circle', 
     align: 'Center',
     padding: 10,

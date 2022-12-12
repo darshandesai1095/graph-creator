@@ -82,7 +82,7 @@ function TitleFieldset() {
             </div>
 
             <div class='field'>
-                <p>Padding Top / Bottom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p>Padding Top / Bottom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <DropdownForm
                         list={paddingList}
                         setValue = {setPaddingTop}

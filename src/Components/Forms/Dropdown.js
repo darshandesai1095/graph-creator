@@ -11,13 +11,12 @@ function DropdownForm(props) {
 
             {props.lowerCase ? 
 
-            <select value={props.defautValue}
+            <select value={props.defautValue} // remove this block
                 onChange={(event) => dispatch(props.setValue(event.target.value.toLowerCase()))}>
 
                 {props.list.map(item => (
                 <option value={item}>{item}</option>
                 ))}
-
             </select>
 
             :
@@ -28,7 +27,6 @@ function DropdownForm(props) {
                 {props.list.map(item => (
                    <option value={item}>{item}</option>
                 ))}
-
             </select>
             
         }

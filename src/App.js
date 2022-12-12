@@ -128,8 +128,8 @@ function App() {
 
           <TitleFieldset/>
           <KeyFieldset/>
-          <BackgroundFieldset/>
           <AxesFieldset/>
+          <BackgroundFieldset/>
           <DescritpionFieldset/>
         
       </div>
@@ -137,7 +137,7 @@ function App() {
       <div className='main-content'>
         
       <div className='main-content__chart'>
-<h3 className='chart__title'
+        <h3 className='chart__title'
               style={{alignSelf: `${titleField.position}`,
                       paddingTop: `${titleField.paddingTop}px`,
                       paddingBottom: `${titleField.paddingBottom}px`,
@@ -147,7 +147,7 @@ function App() {
                       fontSize: `${titleField.fontSize}px`,
                       color: `${titleField.color}`}
                     }
-              >{}</h3>
+              >{titleField.title}</h3>
                 {/*      <Bar datasets={data}
                       labels={labels}
                       height={100}
@@ -157,7 +157,8 @@ function App() {
           /> */}
 
 <div>
-      <Pie
+
+      <Bar
         data={{
           labels: ['test label', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
           datasets: [
@@ -194,44 +195,43 @@ function App() {
         width={600}
         options={{
           plugins: {
-            title: {
-              display: true,
-              text: titleField.title,
-              color: titleField.color,
-              font: {
-                size: titleField.fontSize,
-                family: titleField.font,
+
+
+            scales: {
+              xAxis: {
+                title: {
+                  display: true,
+                  text: 'seconds'
+                }
               },
-              align: titleField.position,
-              padding: {
-                top: titleField.paddingTop,
-                bottom:  titleField.paddingBottom
-              }
+              yAxes: [
+                {
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Titulo do eixo X',
+                    fontStyle: 'italic',
+                    fontSize: 12,
+                    fontColor: '#030',
+                  },
+                },
+              ]
             },
+
+
             legend: {
               display: keyField.display,
-              position: keyField.position,
+              position: keyField.position.toLowerCase(),
               pointStyle: keyField.pointStyle,
-              align: keyField.align,
+              align: keyField.align.toLowerCase(),
               pointStyle: keyField.pointStyle,
               padding: keyField.padding,
               useBorderRadius: true,
               borderRadius: 10,
               reverse: keyField.isReversed,
-              color: "red"
             },
           },
-
           maintainAspectRatio: false,
-          // scales: {
-          //   yAxes: [
-          //     {
-          //       ticks: {
-          //         beginAtZero: true,
-          //       },
-          //     },
-          //   ],
-          // },
         }}
       />
     </div>
@@ -239,11 +239,11 @@ function App() {
 
         </div>
 
-        {/* <div className='main-content__spreadsheet'>
-          <Spreadsheet/>
-        </div> */}
+          {/* <div className='main-content__spreadsheet'>
+            <Spreadsheet/>
+          </div> */}
 
-</div>
+        </div>
     </div>
   );
 }
