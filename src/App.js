@@ -194,30 +194,29 @@ function App() {
         height={400}
         width={600}
         options={{
-          plugins: {
-
-
-            scales: {
-              xAxis: {
+          scales: {
+            x: {
                 title: {
                   display: true,
-                  text: 'seconds'
+                  text: 'Titulo do eixo X',
+                },
+                grid: {
+                  drawOnChartArea: true,
+                  drawTicks: true
                 }
               },
-              yAxes: [
-                {
-                  display: true,
-                  scaleLabel: {
-                    display: true,
-                    labelString: 'Titulo do eixo X',
-                    fontStyle: 'italic',
-                    fontSize: 12,
-                    fontColor: '#030',
-                  },
-                },
-              ]
-            },
-
+            y: {
+              title: {
+                display: true,
+                text: 'Titulo do eixo Y',
+              },
+              grid: {
+                drawOnChartArea: true,
+                drawTicks: true
+              }
+            }
+          },
+          plugins: {
 
             legend: {
               display: keyField.display,
