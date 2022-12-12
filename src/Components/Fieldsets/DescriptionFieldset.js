@@ -41,12 +41,15 @@ function DescritpionFieldset() {
 
 
             <div class='field__description'>
-                <div className="field__text">
+                {/* <div className="field__text">
                     <TextForm
+                        rows={10}
+                        cols={100}
                         inputValue = {""}
                         setValue = {""}
                         placeholder=''/>
-                </div>
+                </div> */}
+                <textarea class="field__description" rows="10" cols="35"></textarea>
             </div>
 
         </div>

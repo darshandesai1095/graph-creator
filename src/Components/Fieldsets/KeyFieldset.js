@@ -14,7 +14,7 @@ function KeyFieldset() {
     const keyField = useSelector((state) => state.key.value)
     const dispatch = useDispatch()
 
-    const alignmentList = ["top", "Left", "Bottom", "Right", "Chart Area"]
+    const alignmentList = ["top", "left", "bottom", "right", "chart area"]
     const widthList = []
     for (let i=0; i<=200; i++) {
         if (i%10 === 0) {
