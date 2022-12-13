@@ -7,7 +7,7 @@ import TitleFieldset from './Components/Fieldsets/TitleFieldset';
 import KeyFieldset from './Components/Fieldsets/KeyFieldset';
 import AxesFieldset from './Components/Fieldsets/AxesFieldset';
 import Navigation from './Components/Navigation';
-import BackgroundFieldset from './Components/Fieldsets/BackgroundFieldset';
+import CanvasFieldset from './Components/Fieldsets/CanvasFieldset';
 import DescritpionFieldset from './Components/Fieldsets/DescriptionFieldset';
 import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
@@ -130,7 +130,7 @@ function App() {
           <TitleFieldset/>
           <KeyFieldset/>
           <AxesFieldset/>
-          <BackgroundFieldset/>
+          <CanvasFieldset/>
           <DescritpionFieldset/>
         
       </div>
@@ -230,6 +230,11 @@ function App() {
               borderRadius: 10,
               reverse: keyField.isReversed,
             },
+
+            subtitle: {
+              display: false,
+              text: "hello"
+            }
           },
           maintainAspectRatio: false,
         }}
