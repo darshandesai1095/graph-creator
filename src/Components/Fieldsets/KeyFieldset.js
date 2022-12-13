@@ -10,7 +10,6 @@ import { setTitle, setColor, setFont, setFontSize, setPosition, setPointStyle, s
 
 function KeyFieldset() {
 
-    const textInputValue = useSelector((state) => state.textInput.value)
     const keyField = useSelector((state) => state.key.value)
     const dispatch = useDispatch()
 
@@ -21,11 +20,6 @@ function KeyFieldset() {
             widthList.push(i)
         }
     }
-    const [isChecked, setIsChecked] = useState(false)
-    const handleChange = () => {
-        setIsChecked(prev => !prev)
-    }
-
 
     const paddingList = []
     for (let i=0; i<=30; i++) {

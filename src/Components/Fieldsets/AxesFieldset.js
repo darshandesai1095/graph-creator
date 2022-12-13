@@ -1,75 +1,62 @@
-import React, { useState } from "react";
+import React from "react";
 import '../../Components/Fieldsets/Fieldsets.css'
-import CustomizedSwitch from "../MUIComponents/CustomizedSwitch";
-import DropdownForm from "../Forms/Dropdown";
-import ColorPickerForm from "../Forms/ColorPicker";
 import TextForm from "../Forms/Text";
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setTitle, setColor, setFont, setFontSize, setPosition, setPointStyle, setBoxWidth,
-    setBoxHeight, setAlign, setPadding, setIsReversed } from '../../features/KeySlice'
+import { setXDisplay, setXLabel, setYDisplay, setYLabel } from '../../features/AxesSlice'
 
 function AxesFieldset() {
 
-    const textInputValue = useSelector((state) => state.textInput.value)
-    const keyField = useSelector((state) => state.key.value)
+    const axesField = useSelector((state) => state.axes.value)
     const dispatch = useDispatch()
 
-    const alignmentList = ["Top", "Left", "Bottom", "Right", "Chart Area"]
-    const widthList = []
-    for (let i=0; i<=200; i++) {
-        if (i%10 === 0) {
-            widthList.push(i)
-        }
-    }
-    const [isChecked, setIsChecked] = useState(false)
-    const handleChange = () => {
-        setIsChecked(prev => !prev)
-    }
-
-
-    const paddingList = []
-    for (let i=0; i<=30; i++) {
-            paddingList.push(i)
-    }
 
     return (
         <div class='fieldset'>
+
             <div class='field'>
                 <h2>Axes</h2>
-                <CustomizedSwitch defaultChecked />
             </div>
 
             <div class='field'>
-                <p>Align</p>
-                    <DropdownForm
-                        list={["Start", "Center", "End"]}
-                        setValue = {0}
-                        defautValue = {0}
-                        formSize = "medium" />
+                <p>X Axis</p> 
+                <input 
+                    type="checkbox"
+                    className="key__checkbox"
+                    checked={axesField.xDisplay}
+                    onChange={() => dispatch(setXDisplay())}
+                />
             </div>
 
-
             <div class='field'>
-                <p>Text</p> 
+                <p>X Axis Label</p>
                 <div className="field__text">
                     <TextForm
-                        inputValue = {0}
-                        setValue = {0}
-                        placeholder='Enter Title'/>
+                        inputValue = {axesField.xLabel}
+                        setValue = {setXLabel}
+                        placeholder='X Axis Label'/>
                 </div>
             </div>
 
             <div class='field'>
-                <p>Display Ticks</p>
+                <p>Y Axis</p> 
                 <input 
                     type="checkbox"
                     className="key__checkbox"
-                    checked={0}
-                    onChange={0}
+                    checked={axesField.yDisplay}
+                    onChange={() => dispatch(setYDisplay())}
                 />
             </div>
 
+            <div class='field'>
+                <p>Y Axis Label</p>
+                <div className="field__text">
+                    <TextForm
+                        inputValue = {axesField.yLabel}
+                        setValue = {setYLabel}
+                        placeholder='Y Axis Label'/>
+                </div>
+            </div>
 
         </div>
     )

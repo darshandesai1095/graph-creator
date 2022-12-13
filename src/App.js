@@ -41,6 +41,7 @@ function App() {
 
   const titleField = useSelector((state) => state.textInput.value)
   const keyField = useSelector((state) => state.key.value)
+  const axesField = useSelector((state) => state.axes.value)
 
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
@@ -197,8 +198,8 @@ function App() {
           scales: {
             x: {
                 title: {
-                  display: true,
-                  text: 'Titulo do eixo X',
+                  display: axesField.xDisplay,
+                  text: `${axesField.xLabel}`,
                 },
                 grid: {
                   drawOnChartArea: true,
@@ -207,8 +208,8 @@ function App() {
               },
             y: {
               title: {
-                display: true,
-                text: 'Titulo do eixo Y',
+                display: axesField.yDisplay,
+                text: `${axesField.yLabel}`,
               },
               grid: {
                 drawOnChartArea: true,
