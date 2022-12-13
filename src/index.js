@@ -8,12 +8,14 @@ import { Provider } from 'react-redux'
 import textInputReducer from './features/TitleSlice.js'
 import keyReducer from './features/KeySlice.js'
 import axesReducer from './features/AxesSlice.js' 
+import descriptionReducer from './features/DescriptionSlice.js'
 
 export const store = configureStore({
   reducer: {
     textInput: textInputReducer, // titleReducer
     key: keyReducer,
-    axes: axesReducer
+    axes: axesReducer,
+    description: descriptionReducer
   },
 })
 

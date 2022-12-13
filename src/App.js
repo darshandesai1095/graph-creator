@@ -7,7 +7,6 @@ import TitleFieldset from './Components/Fieldsets/TitleFieldset';
 import KeyFieldset from './Components/Fieldsets/KeyFieldset';
 import AxesFieldset from './Components/Fieldsets/AxesFieldset';
 import Navigation from './Components/Navigation';
-import CanvasFieldset from './Components/Fieldsets/CanvasFieldset';
 import DescritpionFieldset from './Components/Fieldsets/DescriptionFieldset';
 import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
@@ -42,6 +41,7 @@ function App() {
   const titleField = useSelector((state) => state.textInput.value)
   const keyField = useSelector((state) => state.key.value)
   const axesField = useSelector((state) => state.axes.value)
+  const descriptionField = useSelector((state) => state.description.value)
 
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
@@ -130,7 +130,6 @@ function App() {
           <TitleFieldset/>
           <KeyFieldset/>
           <AxesFieldset/>
-          <CanvasFieldset/>
           <DescritpionFieldset/>
         
       </div>
@@ -232,8 +231,8 @@ function App() {
             },
 
             subtitle: {
-              display: false,
-              text: "hello"
+              display: descriptionField.description.length > 0 ? true : false,
+              text: `${descriptionField.description}`
             }
           },
           maintainAspectRatio: false,

@@ -45,8 +45,9 @@
 
 .main-content__chart {
   border: 1px solid #ced4da;
-  /* width: 800px; */
-  padding: 10px;
+  /* width: 800px;
+  height: 600px; */
+  padding: 20px 25px;
   background-color: white;
   display: inline-block;
   display: flex;
