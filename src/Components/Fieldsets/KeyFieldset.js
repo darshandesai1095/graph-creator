@@ -5,7 +5,7 @@ import TextForm from "../Forms/Text";
 import DropdownForm from "../Forms/Dropdown";
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setTitle, setColor, setFont, setFontSize, setPosition, setPointStyle, setBoxWidth,
+import { setDisplay, setTitle, setColor, setFont, setFontSize, setPosition, setPointStyle, setBoxWidth,
     setBoxHeight, setAlign, setPadding, setIsReversed } from '../../features/KeySlice'
 
 function KeyFieldset() {
@@ -30,7 +30,9 @@ function KeyFieldset() {
         <div class='fieldset'>
             <div class='field'>
                 <h2>Legend</h2>
-                <CustomizedSwitch defaultChecked />
+                <CustomizedSwitch 
+                    checked={keyField.display}
+                    setValue={setDisplay} />               
             </div>
 
             <div class='field'>

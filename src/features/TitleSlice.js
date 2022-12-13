@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {value: {
+  display: true,
   title: "",
   font: "Arial",
   color: "#4f4f4f",
@@ -17,6 +18,9 @@ export const textInputSlice = createSlice({
   initialState,
 
   reducers: {
+    setDisplay: (state, action) => {
+      state.value.display = !state.value.display 
+    },
     setTitle: (state, action) => {
       state.value.title = action.payload
     },
@@ -41,7 +45,7 @@ export const textInputSlice = createSlice({
   }
 })
 
-export const { setTitle, setFont, setColor, setFontSize, setPosition,
+export const { setDisplay, setTitle, setFont, setColor, setFontSize, setPosition,
                setPaddingTop, setPaddingBottom, setPaddingLeft, setPaddingRight } = textInputSlice.actions
 
 export default textInputSlice.reducer

@@ -126,18 +126,22 @@ function App() {
               }}
             />
           </Box> */}
-
           <TitleFieldset/>
           <KeyFieldset/>
           <AxesFieldset/>
-          <DescritpionFieldset/>
-        
+          <DescritpionFieldset/>  
       </div>
 
       <div className='main-content'>
         
-      <div className='main-content__chart'>
-        <h3 className='chart__title'
+        <div className='main-content__chart'>
+
+          {
+            titleField.display 
+            
+            &&
+
+            <h3 className='chart__title'
               style={{alignSelf: `${titleField.position}`,
                       paddingTop: `${titleField.paddingTop}px`,
                       paddingBottom: `${titleField.paddingBottom}px`,
@@ -147,107 +151,94 @@ function App() {
                       fontSize: `${titleField.fontSize}px`,
                       color: `${titleField.color}`}
                     }
-              >{titleField.title}</h3>
-                {/*      <Bar datasets={data}
-                      labels={labels}
-                      height={100}
-                      options={{ 
+              >{titleField.title}
+            </h3>
 
-                      }}
-          /> */}
+          }
 
-<div>
 
-      <Bar
-        data={{
-          labels: ['test label', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [
-            {
-              label: '# of votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-              ],
-              borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-              ],
-              borderWidth: 1,
-            },
-            // {
-            //   label: 'Quantity',
-            //   data: [47, 52, 67, 58, 9, 50],
-            //   backgroundColor: 'orange',
-            //   borderColor: 'red',
-            // },
-          ],
-        }}
-        height={400}
-        width={600}
-        options={{
-          scales: {
-            x: {
-                title: {
-                  display: axesField.xDisplay,
-                  text: `${axesField.xLabel}`,
+          <div>
+            <Bar
+              data={{
+                labels: ['test label', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [
+                  {
+                    label: '# of votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)',
+                    ],
+                    borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)',
+                    ],
+                    borderWidth: 1,
+                  },
+                ],
+              }}
+              height={400}
+              width={600}
+              options={{
+                scales: {
+                  x: {
+                      title: {
+                        display: axesField.xDisplay,
+                        text: `${axesField.xLabel}`,
+                      },
+                      grid: {
+                        drawOnChartArea: true,
+                        drawTicks: true
+                      }
+                    },
+                  y: {
+                    title: {
+                      display: axesField.yDisplay,
+                      text: `${axesField.yLabel}`,
+                    },
+                    grid: {
+                      drawOnChartArea: true,
+                      drawTicks: true
+                    }
+                  }
                 },
-                grid: {
-                  drawOnChartArea: true,
-                  drawTicks: true
-                }
-              },
-            y: {
-              title: {
-                display: axesField.yDisplay,
-                text: `${axesField.yLabel}`,
-              },
-              grid: {
-                drawOnChartArea: true,
-                drawTicks: true
-              }
-            }
-          },
-          plugins: {
-
-            legend: {
-              display: keyField.display,
-              position: keyField.position.toLowerCase(),
-              pointStyle: keyField.pointStyle,
-              align: keyField.align.toLowerCase(),
-              pointStyle: keyField.pointStyle,
-              padding: keyField.padding,
-              useBorderRadius: true,
-              borderRadius: 10,
-              reverse: keyField.isReversed,
-            },
-
-            subtitle: {
-              display: descriptionField.description.length > 0 ? true : false,
-              text: `${descriptionField.description}`
-            }
-          },
-          maintainAspectRatio: false,
-        }}
-      />
-    </div>
-
-
+                plugins: {
+                  legend: {
+                    display: keyField.display,
+                    position: keyField.position.toLowerCase(),
+                    pointStyle: keyField.pointStyle,
+                    align: keyField.align.toLowerCase(),
+                    pointStyle: keyField.pointStyle,
+                    padding: keyField.padding,
+                    useBorderRadius: true,
+                    borderRadius: 10,
+                    reverse: keyField.isReversed,
+                  },
+                  subtitle: {
+                    display: descriptionField.description.length > 0 ? true : false,
+                    text: `${descriptionField.description}`
+                  }
+                },
+                maintainAspectRatio: false,
+              }}
+            />
+          </div>
         </div>
 
           {/* <div className='main-content__spreadsheet'>
             <Spreadsheet/>
           </div> */}
 
-        </div>
+      </div>
+
     </div>
   );
 }

@@ -19,6 +19,9 @@ export const keySlice = createSlice({
     // setVisibility: (state, action) => {
     //   state.value.title = action.payload
     // },
+    setDisplay: (state, action) => {
+        state.value.display = !state.value.display
+    },
     setTitle: (state, action) => {
         state.value.title = action.payload
     },
@@ -49,6 +52,6 @@ export const keySlice = createSlice({
   }
 })
 
-export const { setTitle, setColor, setFont, fontSize, setPosition, setPointStyle, setBoxWidth,
+export const { setDisplay, setTitle, setColor, setFont, fontSize, setPosition, setPointStyle, setBoxWidth,
                setBoxHeight, setAlign, setPadding, setIsReversed } = keySlice.actions
 export default keySlice.reducer

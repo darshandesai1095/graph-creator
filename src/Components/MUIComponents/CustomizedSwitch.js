@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import { useDispatch } from 'react-redux';
 
 const CustomSwitch = styled((props) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -55,15 +56,22 @@ const CustomSwitch = styled((props) => (
   },
 }));
 
-export default function CustomizedSwitch() {
+export default function CustomizedSwitch(props) {
+
+  const dispatch = useDispatch()
+
   return (
       <FormControlLabel
-        control={<CustomSwitch sx={{  m: 0, 
-                                      transform: 'scale(0.8)', 
-                                      marginTop:-0.7, 
-                                      marginRight: -2.5,
-                                      }}
-                                      defaultChecked />}
+        control={<CustomSwitch 
+            sx={{ 
+                  m: 0, 
+                  transform: 'scale(0.8)', 
+                  marginTop:-0.7, 
+                  marginRight: -2.5,
+                }}
+            checked={props.checked}  
+            onChange={() => dispatch(props.setValue())}
+        />}
       />
   );
 }

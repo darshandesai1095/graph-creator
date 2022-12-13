@@ -6,7 +6,7 @@ import DropdownForm from "../Forms/Dropdown";
 import ColorPickerForm from "../Forms/ColorPicker";
 
 import { useSelector } from 'react-redux'
-import { setTitle, setFont, setColor, setFontSize, setPosition,
+import { setDisplay, setTitle, setFont, setColor, setFontSize, setPosition,
     setPaddingTop, setPaddingBottom, setPaddingLeft, setPaddingRight } from '../../features/TitleSlice'
 
 function TitleFieldset() {
@@ -30,7 +30,9 @@ function TitleFieldset() {
 
             <div class='field'>
                 <h2>Title</h2>
-                <CustomizedSwitch defaultChecked />
+                <CustomizedSwitch 
+                    checked={titleField.display}
+                    setValue={setDisplay} />
             </div>
 
             <div class='field'>
