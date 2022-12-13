@@ -63,7 +63,7 @@ function Spreadsheet() {
   return (
     <div className="Spreadsheet">
 
-          <Box sx={{ height: '90vh', width: '68vw', backgroundColor: 'white' }}>
+          <Box sx={{ height: '75vh', width: '40vw', backgroundColor: 'white' }}>
             <DataGrid
               rows={rows}
               columns={colHeaders}

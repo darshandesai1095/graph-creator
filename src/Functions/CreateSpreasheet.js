@@ -5,7 +5,7 @@ function setColumns() {
         { field: 'id', headerName: ' ', width: 50, editable: false, hide: false},
     ]
 
-    for (let i=0; i<=9; i++) {
+    for (let i=0; i<=6; i++) {
         let header = {
                 field:          `field_${i+1}`,
                 headerName:     String.fromCharCode(65 + i),
