@@ -96,18 +96,6 @@ function App() {
     { id: 6, label: colHeaders[7].headerName, data: rows.map(row => row.field_7)}, 
   ]
 
-  const plugin = {
-    id: 'customCanvasBackgroundColor',
-    beforeDraw: (chart, args, options) => {
-      const {ctx} = chart;
-      ctx.save();
-      ctx.globalCompositeOperation = 'destination-over';
-      ctx.fillStyle = "green"
-      ctx.fillRect(0, 0, chart.width, chart.height);
-      ctx.restore();
-    }
-  };
-
   return (
     <div className="App">
 
@@ -233,9 +221,9 @@ function App() {
           </div>
         </div>
 
-          {/* <div className='main-content__spreadsheet'>
+          <div className='main-content__spreadsheet'>
             <Spreadsheet/>
-          </div> */}
+          </div>
 
       </div>
 
