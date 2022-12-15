@@ -1,5 +1,6 @@
 // function to generate a blank spreadsheet which can be populated by user
 
+// column headers from A to G
 function setColumns() {
     const columnHeaders = [
         { field: 'id', headerName: ' ', width: 50, editable: false, hide: false},
@@ -19,6 +20,7 @@ function setColumns() {
     return columnHeaders
 }
 
+// 10 empty rows per column
 function setRows() {
     const rows = [] 
 

@@ -66,7 +66,7 @@ function App() {
   //   { id: 2, field_1: 'Aug', field_2: 20,    field_3: 7,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
   //   { id: 3, field_1: 'Sep', field_2: 14,    field_3: 10, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
   //   { id: 4, field_1: 'Oct', field_2: 15,    field_3: 12, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-  //   { id: 5, field_1: 'Nov', field_2: 9,     field_3: 8,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
+  //   { id: 5, field_1: 'Nov', field_2: 9,   s  field_3: 8,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
   // ])
 
   const updateRows = (rows, field, id, value) => {
@@ -87,7 +87,7 @@ function App() {
   const labels = rows.map(row => row[Object.keys(row)[1]])
 
   const data = [
-    { id: 0, label: colHeaders[1].headerName, data: rows.map(row => row.field_1)}, 
+    // { id: 0, label: colHeaders[1].headerName, data: rows.map(row => row.field_1)}, 
     { id: 1, label: colHeaders[2].headerName, data: rows.map(row => row.field_2)}, 
     { id: 2, label: colHeaders[3].headerName, data: rows.map(row => row.field_3)}, 
     { id: 3, label: colHeaders[4].headerName, data: rows.map(row => row.field_4)}, 
@@ -95,7 +95,8 @@ function App() {
     { id: 5, label: colHeaders[6].headerName, data: rows.map(row => row.field_6)}, 
     { id: 6, label: colHeaders[7].headerName, data: rows.map(row => row.field_7)}, 
   ]
-
+  
+  
   return (
     <div className="App">
 
@@ -146,33 +147,36 @@ function App() {
 
 
           <div>
-            <Bar
-              data={{
-                labels: ['test label', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [
-                  {
-                    label: '# of votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                      'rgba(255, 99, 132, 0.2)',
-                      'rgba(54, 162, 235, 0.2)',
-                      'rgba(255, 206, 86, 0.2)',
-                      'rgba(75, 192, 192, 0.2)',
-                      'rgba(153, 102, 255, 0.2)',
-                      'rgba(255, 159, 64, 0.2)',
-                    ],
-                    borderColor: [
-                      'rgba(255, 99, 132, 1)',
-                      'rgba(54, 162, 235, 1)',
-                      'rgba(255, 206, 86, 1)',
-                      'rgba(75, 192, 192, 1)',
-                      'rgba(153, 102, 255, 1)',
-                      'rgba(255, 159, 64, 1)',
-                    ],
-                    borderWidth: 1,
-                  },
-                ],
-              }}
+            <BarChart
+              // data={{
+              //   labels: ['test label', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              //   datasets: [
+              //     {
+              //       label: '# of votes',
+              //       data: [12, 19, 3, 5, 2, 3],
+              //       backgroundColor: [
+              //         'rgba(255, 99, 132, 0.2)',
+              //         'rgba(54, 162, 235, 0.2)',
+              //         'rgba(255, 206, 86, 0.2)',
+              //         'rgba(75, 192, 192, 0.2)',
+              //         'rgba(153, 102, 255, 0.2)',
+              //         'rgba(255, 159, 64, 0.2)',
+              //       ],
+              //       borderColor: [
+              //         'rgba(255, 99, 132, 1)',
+              //         'rgba(54, 162, 235, 1)',
+              //         'rgba(255, 206, 86, 1)',
+              //         'rgba(75, 192, 192, 1)',
+              //         'rgba(153, 102, 255, 1)',
+              //         'rgba(255, 159, 64, 1)',
+              //       ],
+              //       borderWidth: 1,
+              //     },
+              //   ],
+              // }}
+                labels={labels}
+                datasets={data}
+
               height={400}
               width={600}
               options={{
@@ -221,9 +225,27 @@ function App() {
           </div>
         </div>
 
-          <div className='main-content__spreadsheet'>
+          {/* <div className='main-content__spreadsheet'>
             <Spreadsheet/>
-          </div>
+          </div> */}
+
+<div className="Spreadsheet">
+
+<Box sx={{ height: '75vh', width: '40vw', backgroundColor: 'white' }}>
+  <DataGrid
+    rows={rows}
+    columns={colHeaders}
+    pageSize={20}
+    rowsPerPageOptions={[10]}
+    experimentalFeatures={{ newEditingApi: true }}
+    onCellEditStop={(params, event) => {
+      updateRows(rows, params.field, params.id, event.target.value)
+    }}
+  />
+</Box>
+
+</div>
+
 
       </div>
 
