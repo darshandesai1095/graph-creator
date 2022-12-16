@@ -39,9 +39,6 @@ function App() {
   console.log(SS.setRows())
 
   const titleField = useSelector((state) => state.textInput.value)
-  const keyField = useSelector((state) => state.key.value)
-  const axesField = useSelector((state) => state.axes.value)
-  const descriptionField = useSelector((state) => state.description.value)
 
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
@@ -83,7 +80,6 @@ function App() {
   }
 
   // map INPUT DATA to chart
-
   const labels = rows.map(row => row[Object.keys(row)[1]])
 
   const data = [
@@ -142,11 +138,9 @@ function App() {
                     }
               >{titleField.title}
             </h3>
-
           }
 
-
-          <div>
+          <div style={{width: '700px', height: '400px'}}>
             <BarChart
               // data={{
               //   labels: ['test label', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -176,51 +170,6 @@ function App() {
               // }}
                 labels={labels}
                 datasets={data}
-
-              height={400}
-              width={600}
-              options={{
-                scales: {
-                  x: {
-                      title: {
-                        display: axesField.xDisplay,
-                        text: `${axesField.xLabel}`,
-                      },
-                      grid: {
-                        drawOnChartArea: true,
-                        drawTicks: true
-                      }
-                    },
-                  y: {
-                    title: {
-                      display: axesField.yDisplay,
-                      text: `${axesField.yLabel}`,
-                    },
-                    grid: {
-                      drawOnChartArea: true,
-                      drawTicks: true
-                    }
-                  }
-                },
-                plugins: {
-                  legend: {
-                    display: keyField.display,
-                    position: keyField.position.toLowerCase(),
-                    pointStyle: keyField.pointStyle,
-                    align: keyField.align.toLowerCase(),
-                    pointStyle: keyField.pointStyle,
-                    padding: keyField.padding,
-                    useBorderRadius: true,
-                    borderRadius: 10,
-                    reverse: keyField.isReversed,
-                  },
-                  subtitle: {
-                    display: descriptionField.description.length > 0 ? true : false,
-                    text: `${descriptionField.description}`
-                  }
-                },
-                maintainAspectRatio: false,
-              }}
             />
           </div>
         </div>
@@ -229,23 +178,20 @@ function App() {
             <Spreadsheet/>
           </div> */}
 
-<div className="Spreadsheet">
-
-<Box sx={{ height: '75vh', width: '40vw', backgroundColor: 'white' }}>
-  <DataGrid
-    rows={rows}
-    columns={colHeaders}
-    pageSize={20}
-    rowsPerPageOptions={[10]}
-    experimentalFeatures={{ newEditingApi: true }}
-    onCellEditStop={(params, event) => {
-      updateRows(rows, params.field, params.id, event.target.value)
-    }}
-  />
-</Box>
-
-</div>
-
+          <div className="Spreadsheet">
+            <Box sx={{ height: '75vh', width: '40vw', backgroundColor: 'white' }}>
+              <DataGrid
+                rows={rows}
+                columns={colHeaders}
+                pageSize={20}
+                rowsPerPageOptions={[10]}
+                experimentalFeatures={{ newEditingApi: true }}
+                onCellEditStop={(params, event) => {
+                  updateRows(rows, params.field, params.id, event.target.value)
+                }}
+              />
+            </Box>
+          </div>
 
       </div>
 
