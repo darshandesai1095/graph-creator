@@ -12,6 +12,10 @@ import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
 import { useSelector } from 'react-redux'
 
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SelectChart from './Pages/SelectChart';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -92,7 +96,17 @@ function App() {
   
   
   return (
+
     <div className="App">
+      
+    <BrowserRouter>
+      <SelectChart/>
+      {/* <Grid/>
+      <SplitView/>
+      <Chart/>
+      <About/> */}
+    </BrowserRouter>
+
 
       <Navigation/>
 
@@ -194,6 +208,7 @@ function App() {
       </div>
 
     </div>
+
   );
 }
 
