@@ -4,6 +4,7 @@ import InsertChartOutlinedOutlinedIcon from '@mui/icons-material/InsertChartOutl
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import CategoryIcon from '@mui/icons-material/Category';
 import Tooltip from '@mui/material/Tooltip';
+import SplitscreenIcon from '@mui/icons-material/Splitscreen';
 
 function Navigation() {
 
@@ -20,6 +21,11 @@ function Navigation() {
             <div>
                 <Tooltip title="Edit Data" arrow placement='right'>
                      <CalendarViewMonthIcon sx={{transform: 'scale(1.1)', margin: '5px', marginTop: '7px'}}/>
+                </Tooltip>
+            </div>
+            <div>
+                <Tooltip title="Split View" arrow placement='right'>
+                     <SplitscreenIcon sx={{transform: 'scale(1.1)', margin: '5px', marginTop: '7px'}}/>
                 </Tooltip>
             </div>
             <div>
