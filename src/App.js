@@ -10,10 +10,8 @@ import Navigation from './Components/Navigation';
 import DescritpionFieldset from './Components/Fieldsets/DescriptionFieldset';
 import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
-// import {Chart, Title, Legend} from 'chart.js'
 import { useSelector } from 'react-redux'
 
-import { Bar, Pie } from 'react-chartjs-2'
 import {
   Chart as ChartJS,
   CategoryScale,
