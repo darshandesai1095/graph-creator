@@ -13,8 +13,13 @@ import * as SS from './Functions/CreateSpreasheet';
 import { useSelector } from 'react-redux'
 
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 import SelectChart from './Pages/SelectChart';
+import Grid from './Pages/Grid';
+import SplitView from './Pages/SplitView';
+import Chart from './Pages/Chart';
+import About from './Pages/About';
 
 import {
   Chart as ChartJS,
@@ -98,14 +103,14 @@ function App() {
   return (
 
     <div className="App">
-      
-    <BrowserRouter>
-      <SelectChart/>
-      {/* <Grid/>
-      <SplitView/>
-      <Chart/>
-      <About/> */}
-    </BrowserRouter>
+
+      <Routes>
+        <Route path="select-chart"  element={<SelectChart/>} />
+        <Route path="grid"          element={<Grid/>} />
+        <Route path="split-view"    element={<SplitView/>} />
+        <Route path="edit-chart"    element={<Chart/>} />
+        <Route path="about"         element={<About/>} /> 
+      </Routes>
 
 
       <Navigation/>

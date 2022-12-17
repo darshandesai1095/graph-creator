@@ -9,6 +9,7 @@ import textInputReducer from './features/TitleSlice.js'
 import keyReducer from './features/KeySlice.js'
 import axesReducer from './features/AxesSlice.js' 
 import descriptionReducer from './features/DescriptionSlice.js'
+import { BrowserRouter } from "react-router-dom";
 
 export const store = configureStore({
   reducer: {
@@ -22,9 +23,11 @@ export const store = configureStore({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
