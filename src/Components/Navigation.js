@@ -5,39 +5,57 @@ import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import CategoryIcon from '@mui/icons-material/Category';
 import Tooltip from '@mui/material/Tooltip';
 import SplitscreenIcon from '@mui/icons-material/Splitscreen';
+import react, { useState } from 'react';
+import { NavLink } from "react-router-dom"
 
 function Navigation() {
 
-    const style = {transform: 'scale(1)', margin: '5px', marginTop: '7px'}
+    const style = {transform: 'scale(1.1)', margin: '5px', marginTop: '7px' }
+    let activeStyle = { color: "#5465ff", opacity: '0.9' };
+    let notActiveStyle = { color: "#6c757d" };
 
     return (
         <div className='navigation'>
+            
+            <NavLink to="/select-chart" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
+                <div>
+                    <Tooltip title="Select Chart" arrow placement='right'>
+                        <CategoryIcon sx={style}/>
+                    </Tooltip>
+                </div>
+            </NavLink>
 
-            <div>
-                <Tooltip title="Select Chart" arrow placement='right'>
-                    <CategoryIcon sx={style}/>
-                </Tooltip>
-            </div>
-            <div>
-                <Tooltip title="Edit Data" arrow placement='right'>
-                     <CalendarViewMonthIcon sx={{transform: 'scale(1.1)', margin: '5px', marginTop: '7px'}}/>
-                </Tooltip>
-            </div>
-            <div>
-                <Tooltip title="Split View" arrow placement='right'>
-                     <SplitscreenIcon sx={{transform: 'scale(1.1)', margin: '5px', marginTop: '7px'}}/>
-                </Tooltip>
-            </div>
-            <div>
-                <Tooltip title="Style Chart" arrow placement='right'>
-                    <InsertChartOutlinedOutlinedIcon sx={{transform: 'scale(1.1)', margin: '5px', marginTop: '7px'}}/>
-                </Tooltip>
-            </div>
-            <div>
-                <Tooltip title="About" arrow placement='right'>
-                    <HelpOutlineOutlinedIcon sx={{transform: 'scale(1.1)', margin: '5px', marginTop: '7px'}}/>
-                </Tooltip>
-            </div>
+            <NavLink to="/grid" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
+                <div>
+                    <Tooltip title="Edit Data" arrow placement='right'>
+                        <CalendarViewMonthIcon sx={style}/>
+                    </Tooltip>
+                </div>
+            </NavLink>
+
+            <NavLink to="/split-view" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
+                <div>
+                    <Tooltip title="Split View" arrow placement='right'>
+                        <SplitscreenIcon sx={style}/>
+                    </Tooltip>
+                </div>
+            </NavLink>
+
+            <NavLink to="/chart" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
+                <div>
+                    <Tooltip title="Style Chart" arrow placement='right'>
+                        <InsertChartOutlinedOutlinedIcon sx={style}/>
+                    </Tooltip>
+                </div>
+            </NavLink>
+
+            <NavLink to="/about" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
+                <div>
+                    <Tooltip title="About" arrow placement='right'>
+                        <HelpOutlineOutlinedIcon sx={style}/>
+                    </Tooltip>
+                </div>
+            </NavLink>
 
         </div>
     );

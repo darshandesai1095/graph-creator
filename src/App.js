@@ -105,11 +105,11 @@ function App() {
     <div className="App">
 
       <Routes>
-        <Route path="select-chart"  element={<SelectChart/>} />
-        <Route path="grid"          element={<Grid/>} />
-        <Route path="split-view"    element={<SplitView/>} />
-        <Route path="edit-chart"    element={<Chart/>} />
-        <Route path="about"         element={<About/>} /> 
+        <Route path="/select-chart"  element={<SelectChart/>} />
+        <Route path="/grid"          element={<Grid/>} />
+        <Route path="/split-view"    element={<SplitView/>} />
+        <Route path="/edit-chart"    element={<Chart/>} />
+        <Route path="/about"         element={<About/>} /> 
       </Routes>
 
 

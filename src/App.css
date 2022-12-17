@@ -28,11 +28,11 @@
   margin-bottom: 5px;
 }
 
-.navigation > div:hover {
-  color: #5465ff;
+.navigation div:hover {
   cursor: pointer;
   background-color: #f8f9fa;
   border-radius: 5px;
+  color: #5465ff;
 }
 
 .main-content {
