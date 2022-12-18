@@ -5,7 +5,7 @@ const initialState = {value: {
   title: "",
   font: "Arial",
   color: "#4f4f4f",
-  fontSize: 20,
+  fontSize: 16,
   position: "Center",
   paddingTop: 0,
   paddingBottom: 0,

@@ -110,13 +110,13 @@ function App() {
         <Route path="/select-chart"  element={<SelectChart/>} />
         <Route path="/grid"          element={<Grid/>} />
         <Route path="/split-view"    element={<SplitView/>} />
-        <Route path="/edit-chart"    element={<Chart/>} />
+        <Route path="/edit-chart"    element={<Chart labels={labels} data={data}/>} />
         <Route path="/about"         element={<About/>} /> 
       </Routes>
 
-      <div className='main-content'>
+      {/* <div className='main-content'> */}
         
-        <div className='main-content__chart'>
+        {/* <div className='main-content__chart'>
 
           {
             titleField.display 
@@ -169,13 +169,14 @@ function App() {
                 datasets={data}
             />
           </div>
-        </div>
+
+        </div> */}
 
           {/* <div className='main-content__spreadsheet'>
             <Spreadsheet/>
           </div> */}
 
-          <div className="Spreadsheet">
+          {/* <div className="Spreadsheet">
             <Box sx={{ height: '75vh', width: '40vw', backgroundColor: 'white' }}>
               <DataGrid
                 rows={rows}
@@ -188,9 +189,9 @@ function App() {
                 }}
               />
             </Box>
-          </div>
+          </div> */}
 
-      </div>
+      {/* </div> */}
 
     </div>
 

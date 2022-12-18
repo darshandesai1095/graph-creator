@@ -80,6 +80,7 @@ function TitleFieldset() {
                         list={alignmentList}
                         setValue = {setPosition}
                         defautValue = {titleField.position}
+                        lowerCase = {false}
                         formSize = "medium" />
             </div>
 
