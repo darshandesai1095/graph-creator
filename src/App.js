@@ -104,6 +104,8 @@ function App() {
 
     <div className="App">
 
+      <Navigation/>
+
       <Routes>
         <Route path="/select-chart"  element={<SelectChart/>} />
         <Route path="/grid"          element={<Grid/>} />
@@ -111,28 +113,6 @@ function App() {
         <Route path="/edit-chart"    element={<Chart/>} />
         <Route path="/about"         element={<About/>} /> 
       </Routes>
-
-
-      <Navigation/>
-
-      <div className='sidebar'>
-          {/* <Box sx={{ height: '50vh', width: 360 }}>
-            <DataGrid
-              rows={rows}
-              columns={colHeaders}
-              pageSize={10}
-              rowsPerPageOptions={[10]}
-              experimentalFeatures={{ newEditingApi: true }}
-              onCellEditStop={(params, event) => {
-                updateRows(rows, params.field, params.id, event.target.value)
-              }}
-            />
-          </Box> */}
-          <TitleFieldset/>
-          <KeyFieldset/>
-          <AxesFieldset/>
-          <DescritpionFieldset/>  
-      </div>
 
       <div className='main-content'>
         

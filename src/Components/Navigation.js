@@ -41,7 +41,7 @@ function Navigation() {
                 </div>
             </NavLink>
 
-            <NavLink to="/chart" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
+            <NavLink to="/edit-chart" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
                 <div>
                     <Tooltip title="Style Chart" arrow placement='right'>
                         <InsertChartOutlinedOutlinedIcon sx={style}/>
