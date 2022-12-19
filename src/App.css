@@ -63,3 +63,35 @@
   overflow-y: scroll;
   border-right: 1.5px solid #e9ecef;
 }
+
+.chart-card {
+  border: 1px solid #ced4da;
+  margin: 20px;
+  background-color: white;
+  padding: 10px;
+  width: 210px;
+  height: 240px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  color: #6B767D;
+}
+
+.chart-card:hover {
+  cursor: pointer;
+  color: #5465ff;
+  border: 3px solid #5465ff;
+  transform: scale(1.1);
+
+}
+
+.main-content__selection {
+  flex-grow: 1;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

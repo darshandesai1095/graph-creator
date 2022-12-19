@@ -1,18 +1,7 @@
 import './App.css'
 import { React, useState } from 'react';
-import BarChart from './Charts/BarChart.js'
-import Box from '@mui/material/Box';
-import { DataGrid } from '@mui/x-data-grid';
-import TitleFieldset from './Components/Fieldsets/TitleFieldset';
-import KeyFieldset from './Components/Fieldsets/KeyFieldset';
-import AxesFieldset from './Components/Fieldsets/AxesFieldset';
 import Navigation from './Components/Navigation';
-import DescritpionFieldset from './Components/Fieldsets/DescriptionFieldset';
-import Spreadsheet from './Components/Spreadsheet';
 import * as SS from './Functions/CreateSpreasheet';
-import { useSelector } from 'react-redux'
-
-import ReactDOM from "react-dom/client";
 import { Routes, Route } from "react-router-dom";
 
 import SelectChart from './Pages/SelectChart';
@@ -41,12 +30,6 @@ ChartJS.register(
 
 
 function App() {
-
-  console.log(SS.setColumns())
-  console.log(SS.setRows())
-
-  const titleField = useSelector((state) => state.textInput.value)
-
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
   // these have to be created using useState as the can be updated
@@ -108,90 +91,11 @@ function App() {
 
       <Routes>
         <Route path="/select-chart"  element={<SelectChart/>} />
-        <Route path="/grid"          element={<Grid/>} />
+        <Route path="/grid"          element={<Grid rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
         <Route path="/split-view"    element={<SplitView/>} />
         <Route path="/edit-chart"    element={<Chart labels={labels} data={data}/>} />
         <Route path="/about"         element={<About/>} /> 
       </Routes>
-
-      {/* <div className='main-content'> */}
-        
-        {/* <div className='main-content__chart'>
-
-          {
-            titleField.display 
-            
-            &&
-
-            <h3 className='chart__title'
-              style={{alignSelf: `${titleField.position}`,
-                      paddingTop: `${titleField.paddingTop}px`,
-                      paddingBottom: `${titleField.paddingBottom}px`,
-                      paddingLeft: `${titleField.paddingLeft}px`,
-                      paddingRight: `${titleField.paddingRight}px`,
-                      fontFamily: `${titleField.font}`,
-                      fontSize: `${titleField.fontSize}px`,
-                      color: `${titleField.color}`}
-                    }
-              >{titleField.title}
-            </h3>
-          }
-
-          <div style={{width: '700px', height: '400px'}}>
-            <BarChart
-              // data={{
-              //   labels: ['test label', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-              //   datasets: [
-              //     {
-              //       label: '# of votes',
-              //       data: [12, 19, 3, 5, 2, 3],
-              //       backgroundColor: [
-              //         'rgba(255, 99, 132, 0.2)',
-              //         'rgba(54, 162, 235, 0.2)',
-              //         'rgba(255, 206, 86, 0.2)',
-              //         'rgba(75, 192, 192, 0.2)',
-              //         'rgba(153, 102, 255, 0.2)',
-              //         'rgba(255, 159, 64, 0.2)',
-              //       ],
-              //       borderColor: [
-              //         'rgba(255, 99, 132, 1)',
-              //         'rgba(54, 162, 235, 1)',
-              //         'rgba(255, 206, 86, 1)',
-              //         'rgba(75, 192, 192, 1)',
-              //         'rgba(153, 102, 255, 1)',
-              //         'rgba(255, 159, 64, 1)',
-              //       ],
-              //       borderWidth: 1,
-              //     },
-              //   ],
-              // }}
-                labels={labels}
-                datasets={data}
-            />
-          </div>
-
-        </div> */}
-
-          {/* <div className='main-content__spreadsheet'>
-            <Spreadsheet/>
-          </div> */}
-
-          {/* <div className="Spreadsheet">
-            <Box sx={{ height: '75vh', width: '40vw', backgroundColor: 'white' }}>
-              <DataGrid
-                rows={rows}
-                columns={colHeaders}
-                pageSize={20}
-                rowsPerPageOptions={[10]}
-                experimentalFeatures={{ newEditingApi: true }}
-                onCellEditStop={(params, event) => {
-                  updateRows(rows, params.field, params.id, event.target.value)
-                }}
-              />
-            </Box>
-          </div> */}
-
-      {/* </div> */}
 
     </div>
 
