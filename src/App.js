@@ -82,20 +82,26 @@ function App() {
     { id: 6, label: colHeaders[7].headerName, data: rows.map(row => row.field_7)}, 
   ]
   
+  let page = 'Select Graph'
   
   return (
 
     <div className="App">
 
-      <Navigation/>
+      <div className='header'>
+        <p>Graph Creator</p>
+      </div>
 
-      <Routes>
-        <Route path="/select-chart"  element={<SelectChart/>} />
-        <Route path="/grid"          element={<Grid rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
-        <Route path="/split-view"    element={<SplitView/>} />
-        <Route path="/edit-chart"    element={<Chart labels={labels} data={data}/>} />
-        <Route path="/about"         element={<About/>} /> 
-      </Routes>
+      <div className='main'>
+        <Navigation/>
+        <Routes>
+          <Route path="/select-chart"  element={<SelectChart/>} />
+          <Route path="/grid"          element={<Grid rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
+          <Route path="/split-view"    element={<SplitView labels={labels} data={data} rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
+          <Route path="/edit-chart"    element={<Chart labels={labels} data={data}/>} />
+          <Route path="/about"         element={<About/>} /> 
+        </Routes>
+      </div>
 
     </div>
 

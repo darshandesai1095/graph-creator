@@ -8,7 +8,7 @@ const initialState = {value: {
   fontSize: 16,
   position: "Center",
   paddingTop: 0,
-  paddingBottom: 0,
+  paddingBottom: 10,
   paddingLeft: 0,
   paddingRight: 0
 }}

@@ -4,24 +4,40 @@
   box-sizing: border-box
 }
 
-.App {
+.header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1.5px solid #e9ecef;
+  height: 3rem;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.header p {
+  font-size: 0.9em;
+  padding-bottom: 5px;
+  font-weight: bold;
+  color: #6B767D;
+}
+
+.main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 3rem);
 }
 
 .navigation {
   background-color: white;
   width: 50px;
-  height: 100vh;
+  height: calc(100vh - 3rem);
   border-right: 1.5px solid #e9ecef;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #6c757d;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
 .navigation > div {
@@ -47,7 +63,7 @@
   border: 1px solid #ced4da;
   /* width: 800px;
   height: 600px; */
-  padding: 20px 25px;
+  padding: 30px 35px;
   background-color: white;
   display: inline-block;
   display: flex;
@@ -58,7 +74,7 @@
 
 .sidebar {
   min-width: 350px;
-  height: 100vh;
+  height: calc(100vh - 3rem);
   background-color: white;
   overflow-y: scroll;
   border-right: 1.5px solid #e9ecef;
@@ -69,8 +85,8 @@
   margin: 20px;
   background-color: white;
   padding: 10px;
-  width: 210px;
-  height: 240px;
+  width: 220px;
+  height: 250px;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -94,4 +110,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.chart-card__type {
+  position: absolute;
+  justify-self: end;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.main-content > p {
+  position: relative;
+  bottom: 5%;
 }
