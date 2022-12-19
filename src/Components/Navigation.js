@@ -35,7 +35,7 @@ function Navigation() {
             <NavLink to="/split-view" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
                 <div>
                     <Tooltip title="Split View" arrow placement='right'>
-                        <SplitscreenIcon sx={style}/>
+                        <SplitscreenIcon sx={{...style, transform: 'rotate(90deg)'}}/>
                     </Tooltip>
                 </div>
             </NavLink>
