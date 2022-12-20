@@ -11,7 +11,7 @@ export default function SplitView(props) {
     return (
         <div className="main-content">
 
-            <div className='main-content__chart' style={{marginRight: '10px'}}>
+            <div className='main-content__chart' style={{marginLeft: '20px', marginRight: '10px'}}>
 
                 {
                     titleField.display 

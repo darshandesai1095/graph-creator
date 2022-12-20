@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Bar, Pie, Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 import { useSelector } from 'react-redux'
 Chart.register(...registerables);
 
 
-function BarChart(props) {
+function BarChart(props) { //change name to Chart
 
   const keyField = useSelector((state) => state.key.value)
   const axesField = useSelector((state) => state.axes.value)
@@ -31,60 +31,80 @@ function BarChart(props) {
     }
   }
 
-
-    return (
-  
-          <Bar
-            datasetIdKey='id'
-            data={{
-              labels: labels,
-              datasets: data
-            }}
-            options={{
-              scales: {
-                x: {
-                    title: {
-                      display: axesField.xDisplay,
-                      text: `${axesField.xLabel}`,
-                    },
-                    grid: {
-                      drawOnChartArea: true,
-                      drawTicks: true
-                    }
-                  },
-                y: {
-                  title: {
-                    display: axesField.yDisplay,
-                    text: `${axesField.yLabel}`,
-                  },
-                  grid: {
-                    drawOnChartArea: true,
-                    drawTicks: true
-                  }
-                }
-              },
-              plugins: {
-                legend: {
-                  display: keyField.display,
-                  position: keyField.position.toLowerCase(),
-                  pointStyle: keyField.pointStyle,
-                  align: keyField.align.toLowerCase(),
-                  pointStyle: keyField.pointStyle,
-                  padding: keyField.padding,
-                  useBorderRadius: true,
-                  borderRadius: 10,
-                  reverse: keyField.isReversed,
-                },
-                subtitle: {
-                  display: descriptionField.description.length > 0 ? true : false,
-                  text: `${descriptionField.description}`
-                }
-              },
-              maintainAspectRatio: false,
-            }}
-          />
-  
-    );
+  const options = {
+    scales: {
+      x: {
+          title: {
+            display: axesField.xDisplay,
+            text: `${axesField.xLabel}`,
+          },
+          grid: {
+            drawOnChartArea: true,
+            drawTicks: true
+          }
+        },
+      y: {
+        title: {
+          display: axesField.yDisplay,
+          text: `${axesField.yLabel}`,
+        },
+        grid: {
+          drawOnChartArea: true,
+          drawTicks: true
+        }
+      }
+    },
+    plugins: {
+      legend: {
+        display: keyField.display,
+        position: keyField.position.toLowerCase(),
+        pointStyle: keyField.pointStyle,
+        align: keyField.align.toLowerCase(),
+        pointStyle: keyField.pointStyle,
+        padding: keyField.padding,
+        useBorderRadius: true,
+        borderRadius: 10,
+        reverse: keyField.isReversed,
+      },
+      subtitle: {
+        display: descriptionField.description.length > 0 ? true : false,
+        text: `${descriptionField.description}`
+      }
+    },
+    maintainAspectRatio: false,
   }
+
+  if (props.chartType === "BarChart") {
+    return(
+      <Bar
+        datasetIdKey='id'
+        data={{
+          labels: labels,
+          datasets: data
+        }}
+        options={options}
+      />)
+  } else if (props.chartType === "LineChart") {
+    return (
+      <Line
+        datasetIdKey='id'
+        data={{
+          labels: labels,
+          datasets: data
+        }}
+        options={options}
+      />)
+  } else if (props.chartType === "PieChart") {
+    return (
+      <Pie
+        datasetIdKey='id'
+        data={{
+          labels: labels,
+          datasets: data
+        }}
+        options={options}
+      />)
+  }
+}
   
   export default BarChart;

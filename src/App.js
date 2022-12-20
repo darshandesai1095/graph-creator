@@ -1,5 +1,5 @@
 import './App.css'
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import Navigation from './Components/Navigation';
 import * as SS from './Functions/CreateSpreasheet';
 import { Routes, Route } from "react-router-dom";
@@ -11,22 +11,10 @@ import Chart from './Pages/Chart';
 import About from './Pages/About';
 
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+  Chart as ChartJS, CategoryScale, LinearScale,
+  BarElement, Title, Tooltip, Legend} from 'chart.js';
 ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+  CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 
 function App() {
@@ -81,8 +69,9 @@ function App() {
     { id: 5, label: colHeaders[6].headerName, data: rows.map(row => row.field_6)}, 
     { id: 6, label: colHeaders[7].headerName, data: rows.map(row => row.field_7)}, 
   ]
-  
-  let page = 'Select Graph'
+
+  const [chart, setChart] = useState('BarChart')
+  console.log('CHART: ', chart)
   
   return (
 
@@ -95,10 +84,10 @@ function App() {
       <div className='main'>
         <Navigation/>
         <Routes>
-          <Route path="/select-chart"  element={<SelectChart/>} />
+          <Route path="/select-chart"  element={<SelectChart setChart={setChart}/>} />
           <Route path="/grid"          element={<Grid rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
-          <Route path="/split-view"    element={<SplitView labels={labels} data={data} rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
-          <Route path="/edit-chart"    element={<Chart labels={labels} data={data}/>} />
+          <Route path="/split-view"    element={<SplitView chartType={chart} labels={labels} data={data} rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
+          <Route path="/edit-chart"    element={<Chart chartType={chart} labels={labels} data={data}/>} />
           <Route path="/about"         element={<About/>} /> 
         </Routes>
       </div>

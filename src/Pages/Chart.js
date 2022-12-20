@@ -9,6 +9,7 @@ import BarChart from "../Charts/BarChart";
 
 function Chart(props) {
 
+    console.log("CHART PAGE: ", props.chartType)
     const titleField = useSelector((state) => state.textInput.value)
 
     return (
@@ -47,6 +48,7 @@ function Chart(props) {
                         <BarChart
                             labels={props.labels}
                             datasets={props.data}
+                            chartType={props.chartType}
                         />
                     </div>
 
