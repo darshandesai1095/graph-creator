@@ -12,23 +12,32 @@
   justify-content: space-between;
   padding-left: 17px;
   align-items: center;
+  padding-right: 20px;
 }
 
 .header p {
   font-size: 0.9em;
   padding-bottom: 5px;
   font-weight: bold;
-  color: #6B767D;
+  color: rgb(107, 118, 125);
 }
 
-.header .download-icon {
+.header .download-icon,
+.header .info-icon {
   transition: 0.2s;
 }
 
-.header .download-icon:hover {
+.header .download-icon:hover,
+.header .info-icon:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
+
+.header__toolbar {
+  display: flex;
+  flex-direction: row;
+}
+
 
 .main {
   display: flex;
