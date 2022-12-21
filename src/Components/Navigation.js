@@ -2,9 +2,9 @@ import React from 'react'
 import CalendarViewMonthIcon from '@mui/icons-material/CalendarViewMonth'; 
 import InsertChartOutlinedOutlinedIcon from '@mui/icons-material/InsertChartOutlinedOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
-import CategoryIcon from '@mui/icons-material/Category';
 import Tooltip from '@mui/material/Tooltip';
 import SplitscreenIcon from '@mui/icons-material/Splitscreen';
+import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
 import { NavLink } from "react-router-dom"
 
 function Navigation() {
@@ -19,7 +19,7 @@ function Navigation() {
             <NavLink to="/select-chart" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
                 <div>
                     <Tooltip title="Select Chart" arrow placement='right'>
-                        <CategoryIcon sx={style}/>
+                        <CategoryOutlinedIcon sx={style}/>
                     </Tooltip>
                 </div>
             </NavLink>
