@@ -4,6 +4,7 @@ import Navigation from './Components/Navigation';
 import * as SS from './Functions/CreateSpreasheet';
 import { Routes, Route } from "react-router-dom";
 
+import Header from './Components/Header';
 import SelectChart from './Pages/SelectChart';
 import Grid from './Pages/Grid';
 import SplitView from './Pages/SplitView';
@@ -71,15 +72,12 @@ function App() {
   ]
 
   const [chart, setChart] = useState('BarChart')
-  console.log('CHART: ', chart)
   
   return (
 
     <div className="App">
 
-      <div className='header'>
-        <p>Graph Creator</p>
-      </div>
+      <Header/>
 
       <div className='main'>
         <Navigation/>

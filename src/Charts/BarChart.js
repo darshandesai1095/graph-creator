@@ -23,6 +23,9 @@ function BarChart(props) { //change name to Chart
     }
   }
 
+  // console.log("DATA: ", data)
+  // data[1].label = "ten"
+
   // don't add row to 'labels[]' if entire row is empty
   const labels = []
   for (let el of props.labels) {

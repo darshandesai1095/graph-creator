@@ -36,6 +36,7 @@ export default function SplitView(props) {
                     <BarChart
                         labels={props.labels}
                         datasets={props.data}
+                        chartType={props.chartType}
                     />
                 </div>
 
