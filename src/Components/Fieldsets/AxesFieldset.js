@@ -5,6 +5,7 @@ import TextForm from "../Forms/Text";
 import { useSelector, useDispatch } from 'react-redux'
 import { setXDisplay, setXLabel, setYDisplay, setYLabel } from '../../features/AxesSlice'
 
+
 function AxesFieldset() {
 
     const axesField = useSelector((state) => state.axes.value)
@@ -17,7 +18,7 @@ function AxesFieldset() {
             <div class='field'>
                 <h2>Axes</h2>
             </div>
-
+            
             <div class='field'>
                 <p>X Axis</p> 
                 <input 

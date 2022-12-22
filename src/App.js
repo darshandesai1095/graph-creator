@@ -11,6 +11,7 @@ import SplitView from './Pages/SplitView';
 import Chart from './Pages/Chart';
 import About from './Pages/About';
 
+
 import {
   Chart as ChartJS, CategoryScale, LinearScale,
   BarElement, Title, Tooltip, Legend} from 'chart.js';

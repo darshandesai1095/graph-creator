@@ -36,6 +36,16 @@ function KeyFieldset() {
             </div>
 
             <div class='field'>
+                <p>Legend Labels</p>
+                    <DropdownForm
+                        lowerCase = {false}
+                        list={alignmentList}
+                        setValue = {setPosition}
+                        defautValue = {keyField.position}
+                        formSize = "medium" />
+            </div>
+
+            <div class='field'>
                 <p>Position</p>
                     <DropdownForm
                         lowerCase = {false}

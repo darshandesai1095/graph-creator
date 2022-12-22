@@ -17,7 +17,9 @@ function Header() {
         margin: '5px',
         marginTop: '10px',
         transform: 'scale(1)',
-        "&:hover": { color: "#5465ff;" }
+        "&:hover": { color: "#5465ff;" },
+        color: 'white',
+        "&:hover": { color: "white;" },
     }
 
     const infoDescription = () => {
@@ -27,13 +29,13 @@ function Header() {
         if (pageName === '/select-chart') {
             return 'Pick A Chart'
         } else if (pageName === '/grid') {
-            return 'Enter Data in the Spreadsheet Below'
+            return 'Enter Data into the Spreadsheet Below or Click on the Wand Icon to Generate Sample Data'
         } else if (pageName === '/split-view') {
             return 'Split View'
         } else if (pageName === '/edit-chart' ) {
             return 'Customise Your Chart'
         } else if (pageName === '/about') {
-            return 'About This Site'               
+            return 'About Page'               
         }
 
     }
@@ -51,7 +53,7 @@ function Header() {
             </div>
 
             <div className='download-icon'>
-                <Tooltip title="Download Graph" arrow placement='left'>
+                <Tooltip title="Download Chart" arrow placement='left'>
                     <DownloadForOfflineOutlinedIcon sx={style}/>
                 </Tooltip>
             </div>

@@ -13,6 +13,7 @@
   padding-left: 17px;
   align-items: center;
   padding-right: 20px;
+  background-color: #5465ff
 }
 
 .header p {
@@ -20,6 +21,7 @@
   padding-bottom: 5px;
   font-weight: bold;
   color: rgb(107, 118, 125);
+  color: white
 }
 
 .header .download-icon,
