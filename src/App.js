@@ -11,6 +11,8 @@ import SplitView from './Pages/SplitView';
 import Chart from './Pages/Chart';
 import About from './Pages/About';
 
+import downloadjs from 'downloadjs';
+import html2canvas from 'html2canvas';
 
 import {
   Chart as ChartJS, CategoryScale, LinearScale,
@@ -20,6 +22,13 @@ ChartJS.register(
 
 
 function App() {
+
+const handleCaptureClick = async () => {
+  const canvas = await html2canvas(document.getElementsByClassName("main-content__chart")[0])
+  const dataURL = canvas.toDataURL('image/png')
+  downloadjs(dataURL, 'download.png', 'image/png')
+}
+
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
   // these have to be created using useState as the can be updated
@@ -78,7 +87,7 @@ function App() {
 
     <div className="App">
 
-      <Header/>
+      <Header handleCaptureClick={handleCaptureClick}/>
 
       <div className='main'>
         <Navigation/>
@@ -90,6 +99,12 @@ function App() {
           <Route path="/about"         element={<About/>} /> 
         </Routes>
       </div>
+
+      {/* <li>
+        <a href="#" onClick={handleCaptureClick}>
+          Capture
+        </a>
+      </li> */}
 
     </div>
 

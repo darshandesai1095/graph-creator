@@ -12,12 +12,6 @@ import html2canvas from 'html2canvas';
 
 function Chart(props) {
 
-    const handleCaptureClick = async () => {
-        const canvas = await html2canvas(document.getElementsByClassName("main-content__chart")[0])
-        const dataURL = canvas.toDataURL('image/png')
-        downloadjs(dataURL, 'download.png', 'image/png')
-    }
-
     const titleField = useSelector((state) => state.textInput.value)
 
     return (
@@ -61,12 +55,6 @@ function Chart(props) {
                     </div>
 
                 </div>
-
-                <li>
-                    <a href="#" onClick={handleCaptureClick}>
-                    Capture
-                    </a>
-                </li>
 
             </div>
 

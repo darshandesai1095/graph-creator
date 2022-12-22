@@ -7,7 +7,7 @@ import DownloadForOfflineOutlinedIcon from '@mui/icons-material/DownloadForOffli
 import AutoFixHighOutlinedIcon from '@mui/icons-material/AutoFixHighOutlined';
 import { useLocation } from "react-router-dom"
 
-function Header() {
+function Header(props) {
 
     const location = useLocation()
     console.log("LOCATION: ", location)
@@ -52,7 +52,7 @@ function Header() {
                 </Tooltip>
             </div>
 
-            <div className='download-icon'>
+            <div className='download-icon' onClick={props.handleCaptureClick}>
                 <Tooltip title="Download Chart" arrow placement='left'>
                     <DownloadForOfflineOutlinedIcon sx={style}/>
                 </Tooltip>
