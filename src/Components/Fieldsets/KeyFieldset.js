@@ -71,12 +71,12 @@ function KeyFieldset() {
                             list={[
                                 'Circle',
                                 'Cross',
-                                // 'CrossRot',
+                                'CrossRot',
                                 'Dash',
                                 'Line',
                                 'Rect',
-                                // 'RectRounded',
-                                // 'RectRot',
+                                'RectRounded',
+                                'RectRot',
                                 'Star',
                                 'Triangle'
                             ]}

@@ -23,8 +23,6 @@ ChartJS.register(
 
 // generate sample data
 // legend labels
-// pointer style
-// pointer size
 // description padding
 
 function App() {

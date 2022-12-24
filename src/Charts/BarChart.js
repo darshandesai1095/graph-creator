@@ -49,7 +49,7 @@ const sampleData = [
     elements: {
       point: {
         radius: keyField.pointSize,
-        pointStyle: keyField.pointStyle.toLowerCase()
+        pointStyle: keyField.pointStyle[0].toLowerCase() + keyField.pointStyle.substring(1)
       }
     },
     scales: {
