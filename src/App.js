@@ -112,11 +112,11 @@ function App() {
       <div className='main'>
         <Navigation/>
         <Routes>
-          <Route path="/select-chart"  element={<SelectChart setChart={setChart}/>} />
-          <Route path="/grid"          element={<Grid rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
-          <Route path="/split-view"    element={<SplitView chartType={chart} labels={labels} data={data} rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
-          <Route path="/edit-chart"    element={<Chart chartType={chart} labels={labels} data={data}/>} />
-          <Route path="/about"         element={<About/>} /> 
+          <Route exact path="/select-chart"  element={<SelectChart setChart={setChart}/>} />
+          <Route exact path="/grid"          element={<Grid rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
+          <Route exact path="/split-view"    element={<SplitView chartType={chart} labels={labels} data={data} rows={rows} colHeaders={colHeaders} updateRows={updateRows}/>} />
+          <Route exact path="/edit-chart"    element={<Chart chartType={chart} labels={labels} data={data}/>} />
+          <Route exact path="/about"         element={<About/>} /> 
         </Routes>
       </div>
 
