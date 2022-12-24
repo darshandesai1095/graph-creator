@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { descriptionSlice } from './DescriptionSlice'
 
 const initialState = {value: {
   display: true,

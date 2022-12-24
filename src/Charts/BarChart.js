@@ -89,7 +89,7 @@ const sampleData = [
       subtitle: {
         display: descriptionField.description.length > 0 ? true : false,
         text: `${descriptionField.description}`,
-        padding: '5'
+        padding: descriptionField.descriptionPadding
       }
     },
     maintainAspectRatio: false,

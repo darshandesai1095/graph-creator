@@ -3,7 +3,7 @@ import '../../Components/Fieldsets/Fieldsets.css'
 import Description from "../Forms/Description";
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setDescription } from '../../features/DescriptionSlice'
+import { setDescription, setDescriptionPadding } from '../../features/DescriptionSlice'
 
 function DescritpionFieldset() {
 
@@ -17,6 +17,18 @@ function DescritpionFieldset() {
                 <h2>Description</h2>
             </div>
 
+            <div class='field sliderContainer'>
+                <p>Padding</p>
+                    <input
+                        className="slider"
+                        type='range'
+                        min={0} max={10}
+                        defaultValue={descriptionField.descriptionPadding}
+                        onChange={(e)=>dispatch(setDescriptionPadding(e.target.value))}
+                        step='1'
+                    />
+        
+            </div>
 
             <div class='field__description'>
                 <Description

@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {value: {
     description: "",
+    descriptionPadding: 0
 }}
 
 export const descriptionSlice = createSlice({
@@ -11,9 +12,12 @@ export const descriptionSlice = createSlice({
     setDescription: (state, action) => {
         state.value.description = action.payload 
     },
+    setDescriptionPadding: (state, action) => {
+      state.value.descriptionPadding = action.payload
+    }
   }
 })
 
-export const { setDescription } = descriptionSlice.actions
+export const { setDescription, setDescriptionPadding } = descriptionSlice.actions
 export default descriptionSlice.reducer
 
