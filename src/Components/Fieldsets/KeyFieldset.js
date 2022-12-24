@@ -71,18 +71,18 @@ function KeyFieldset() {
                             list={[
                                 'Circle',
                                 'Cross',
-                                'CrossRot',
+                                // 'CrossRot',
                                 'Dash',
                                 'Line',
                                 'Rect',
-                                'RectRounded',
-                                'RectRot',
+                                // 'RectRounded',
+                                // 'RectRot',
                                 'Star',
                                 'Triangle'
                             ]}
-                            lowerCase={true}
+                            lowerCase={false}
                             setValue = {setPointStyle}
-                            defautValue = {keyField.setPointStyle}
+                            defautValue = {keyField.pointStyle}
                             formSize = "medium" />
             </div>
 
@@ -94,7 +94,7 @@ function KeyFieldset() {
                         min={0} max={6}
                         defaultValue={keyField.pointSize}
                         onChange={(e)=>dispatch(setPointSize(e.target.value))}
-                        step='1'
+                        step='0.5'
                     />
         
             </div>

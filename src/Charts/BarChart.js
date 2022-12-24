@@ -22,7 +22,7 @@ function BarChart(props) { //change name to Chart
       data.push(props.datasets[i])
     }
   }
-  console.log("DATA: ", data)
+  // console.log("DATA: ", data)
   // London, Rio De Janeiro, CDMX, SF, Nairobi, Seoul
 
 const sampleData = [
@@ -34,7 +34,7 @@ const sampleData = [
   {id: 6, label: 'G', data: ['-2', '0', '6', '13', '18', '22', '25', '26', '21', '15', '7', '4']}
 ]
 
-  console.log("DATA: ", data)
+  // console.log("DATA: ", data)
   // data[1].label = "ten"
 
   // don't add row to 'labels[]' if entire row is empty
@@ -49,7 +49,7 @@ const sampleData = [
     elements: {
       point: {
         radius: keyField.pointSize,
-        pointStyle: `${keyField.pointStyle}`
+        pointStyle: keyField.pointStyle.toLowerCase()
       }
     },
     scales: {
@@ -78,7 +78,7 @@ const sampleData = [
       legend: {
         display: keyField.display,
         position: keyField.position.toLowerCase(),
-        pointStyle: keyField.pointStyle,
+        // pointStyle: keyField.pointStyle,
         align: keyField.align.toLowerCase(),
         pointStyle: keyField.pointStyle,
         padding: keyField.padding,

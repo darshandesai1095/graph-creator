@@ -1,6 +1,5 @@
 import '../App.css'
 import React from 'react';
-import { Routes, Route } from "react-router-dom";
 import Tooltip from '@mui/material/Tooltip';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import DownloadForOfflineOutlinedIcon from '@mui/icons-material/DownloadForOfflineOutlined';
@@ -11,7 +10,6 @@ import { useLocation } from "react-router-dom"
 function Header(props) {
 
     const location = useLocation()
-    console.log("LOCATION: ", location)
 
     const style = {
         color: '#6B767D',
@@ -40,7 +38,6 @@ function Header(props) {
         }
 
     }
-
   
   return (
     <div className='header'>
