@@ -79,6 +79,10 @@ p {
     outline: none;
 }
 
+.sliderContainer {
+    padding-bottom: 20px;
+}
+
 
 .slider {
     -webkit-appearance: none;
@@ -89,6 +93,7 @@ p {
     opacity: 0.8;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    margin-top:10px;
   }
 
 .slider:hover {
@@ -112,3 +117,4 @@ p {
     background: #04AA6D;
     cursor: pointer;
 }
+

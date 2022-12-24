@@ -86,7 +86,7 @@ function KeyFieldset() {
                             formSize = "medium" />
             </div>
 
-            <div class='field'>
+            <div class='field sliderContainer'>
                 <p>Pointer Size</p>
                     <input
                         className="slider"
