@@ -21,13 +21,25 @@ ChartJS.register(
   CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 
+// generate sample data
+// legend labels
+// pointer style
+// pointer size
+// description padding
+
 function App() {
 
-const handleCaptureClick = async () => {
-  const canvas = await html2canvas(document.getElementsByClassName("main-content__chart")[0])
-  const dataURL = canvas.toDataURL('image/png')
-  downloadjs(dataURL, 'download.png', 'image/png')
-}
+  const handleCaptureClick = async () => {
+    const canvas = await html2canvas(document.getElementsByClassName("main-content__chart")[0])
+    const dataURL = canvas.toDataURL('image/png')
+    downloadjs(dataURL, 'download.png', 'image/png')
+  }
+
+  const generateSampleData = () => {
+
+  }
+
+
 
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
@@ -99,12 +111,6 @@ const handleCaptureClick = async () => {
           <Route path="/about"         element={<About/>} /> 
         </Routes>
       </div>
-
-      {/* <li>
-        <a href="#" onClick={handleCaptureClick}>
-          Capture
-        </a>
-      </li> */}
 
     </div>
 

@@ -24,7 +24,7 @@ function setColumns() {
 function setRows() {
     const rows = [] 
 
-    for (let i=0; i<=9; i++) {
+    for (let i=0; i<12; i++) {
         let row = {
                 id: i+1,
                 field_1: null,
@@ -36,7 +36,10 @@ function setRows() {
                 field_7: null,
                 field_8: null,
                 field_9: null,
-                field_10: null
+                field_10: null,
+                field_11: null,
+                field_12: null,
+                field_12: null
         }
         rows.push(row)
     }
