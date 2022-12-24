@@ -5,6 +5,7 @@ import Tooltip from '@mui/material/Tooltip';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import DownloadForOfflineOutlinedIcon from '@mui/icons-material/DownloadForOfflineOutlined';
 import AutoFixHighOutlinedIcon from '@mui/icons-material/AutoFixHighOutlined';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { useLocation } from "react-router-dom"
 
 function Header(props) {
@@ -49,6 +50,13 @@ function Header(props) {
             <div className='download-icon'>
                 <Tooltip title="Generate Sample Data" arrow placement='left'>
                     <AutoFixHighOutlinedIcon sx={style}/>
+                </Tooltip>
+            </div>
+
+
+            <div>
+                <Tooltip className='info-icon' title="Clear Table" arrow placement='left'>
+                    <HighlightOffIcon sx={style}/>
                 </Tooltip>
             </div>
 
