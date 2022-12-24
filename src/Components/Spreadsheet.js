@@ -7,9 +7,6 @@ import * as SS from '../Functions/CreateSpreasheet';
 
 function Spreadsheet() {
 
-  console.log(SS.setColumns())
-  console.log(SS.setRows())
-
   // INPUT DATA -> e.g. csv, pasted, typed, etc
   // these have to be created using useState as the can be updated
 
@@ -25,7 +22,7 @@ function Spreadsheet() {
   // ])
 
 
-  const [rows, setRows] = useState(SS.setRows())
+  const [rows, setRows] = useState(SS.setTableRows())
   //   { id: 1, field_1: '1', field_2: 12,    field_3: 10, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
   //   { id: 2, field_1: '2', field_2: 7,     field_3: 1,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
   //   { id: 3, field_1: '3', field_2: 20,    field_3: 7,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
@@ -48,7 +45,6 @@ function Spreadsheet() {
   }
 
   // map INPUT DATA to chart
-
   const labels = rows.map(row => row[Object.keys(row)[1]])
 
   const data = [

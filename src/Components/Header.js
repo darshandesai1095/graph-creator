@@ -52,7 +52,8 @@ function Header(props) {
 
 
             <div>
-                <Tooltip className='info-icon' title="Clear Table" arrow placement='left'>
+                <Tooltip className='info-icon' title="Clear Table" arrow placement='left' 
+                         onClick={props.clearTable}>
                     <HighlightOffIcon sx={style}/>
                 </Tooltip>
             </div>

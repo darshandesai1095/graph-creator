@@ -35,7 +35,7 @@ function App() {
   // INPUT DATA -> e.g. csv, pasted, typed, etc
   // these have to be created using useState as the can be updated
 
-  const [colHeaders, setColHeaders] = useState(SS.setColumns())
+  const [colHeaders, setColHeaders] = useState(SS.setTableColumns())
   // const [colHeaders, setColHeaders] = useState([
   //   { field: 'id',      headerName: '#', width: 50,   editable: false, hide: true},
   //   { field: 'field_1', headerName: ' ', width: 100,  editable: true,  allowResizing: true },
@@ -48,7 +48,7 @@ function App() {
   // ])
 
 
-  const [rows, setRows] = useState(SS.setRows())
+  const [rows, setRows] = useState(SS.setTableRows())
   const sampleData = [
     { id: 1, field_1: 'Jan', field_2: 5,   field_3: 26,   field_4:15, field_5: 11, field_6: 18,    field_7: -2},
     { id: 2, field_1: 'Feb', field_2: 5,   field_3: 27,   field_4:16, field_5: 13, field_6: 19,    field_7: 0},
@@ -91,7 +91,11 @@ function App() {
   ]
 
   const generateSampleData = () => {
-     setRows(sampleData)
+    setRows(sampleData)
+  }
+
+  const clearTable = () => {
+    setRows(SS.setTableRows())
   }
 
   const [chart, setChart] = useState('LineChart')
@@ -102,6 +106,7 @@ function App() {
 
       <Header handleCaptureClick={handleCaptureClick}
               generateSampleData={generateSampleData}
+              clearTable={clearTable}
       />
 
       <div className='main'>

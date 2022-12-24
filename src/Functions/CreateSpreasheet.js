@@ -1,7 +1,7 @@
 // function to generate a blank spreadsheet which can be populated by user
 
 // column headers from A to G
-function setColumns() {
+function setTableColumns() {
     const columnHeaders = [
         { field: 'id', headerName: ' ', width: 50, editable: false, hide: false},
     ]
@@ -21,7 +21,7 @@ function setColumns() {
 }
 
 // 10 empty rows per column
-function setRows() {
+function setTableRows() {
     const rows = [] 
 
     for (let i=0; i<12; i++) {
@@ -47,4 +47,4 @@ function setRows() {
     return rows
 }
 
-export {setColumns, setRows}
+export {setTableColumns, setTableRows}
