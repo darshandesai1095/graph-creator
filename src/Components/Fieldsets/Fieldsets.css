@@ -100,6 +100,7 @@ p {
     appearance: none;
     width: 15px;
     height: 15px;
+    border-radius: 2px;
     background: #04AA6D;
     cursor: pointer;
 }
@@ -107,6 +108,7 @@ p {
 .slider::-moz-range-thumb {
     width: 15px;
     height: 15px;
+    border-radius: 2px;
     background: #04AA6D;
     cursor: pointer;
 }

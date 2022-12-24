@@ -91,7 +91,7 @@ function KeyFieldset() {
                     <input
                         className="slider"
                         type='range'
-                        min={0} max={5}
+                        min={0} max={6}
                         defaultValue={keyField.pointSize}
                         onChange={(e)=>dispatch(setPointSize(e.target.value))}
                         step='1'
