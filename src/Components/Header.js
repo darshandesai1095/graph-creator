@@ -44,7 +44,7 @@ function Header(props) {
         <p>Graph Creator</p>
         <div className='header__toolbar'>
 
-            <div className='download-icon'>
+            <div className='download-icon' onClick={props.generateSampleData}>
                 <Tooltip title="Generate Sample Data" arrow placement='left'>
                     <AutoFixHighOutlinedIcon sx={style}/>
                 </Tooltip>

@@ -23,7 +23,6 @@ ChartJS.register(
 
 // generate sample data
 // legend labels
-// description padding
 
 function App() {
 
@@ -32,13 +31,6 @@ function App() {
     const dataURL = canvas.toDataURL('image/png')
     downloadjs(dataURL, 'download.png', 'image/png')
   }
-
-  const generateSampleData = () => {
-
-  }
-
-
-
 
   // INPUT DATA -> e.g. csv, pasted, typed, etc
   // these have to be created using useState as the can be updated
@@ -55,15 +47,22 @@ function App() {
   //   { field: 'field_7', headerName: '6', width: 100,  editable: true },
   // ])
 
+
   const [rows, setRows] = useState(SS.setRows())
-  // const [rows, setRows] = useState([
-  //   { id: 0, field_1: 'Jun', field_2: 12,    field_3: 10, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-  //   { id: 1, field_1: 'Jul', field_2: 7,     field_3: 1,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-  //   { id: 2, field_1: 'Aug', field_2: 20,    field_3: 7,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-  //   { id: 3, field_1: 'Sep', field_2: 14,    field_3: 10, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-  //   { id: 4, field_1: 'Oct', field_2: 15,    field_3: 12, field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-  //   { id: 5, field_1: 'Nov', field_2: 9,   s  field_3: 8,  field_4:10, field_5: 8, field_6: 12,    field_7: 10},
-  // ])
+  const sampleData = [
+    { id: 1, field_1: 'Jan', field_2: 5,   field_3: 26,   field_4:15, field_5: 11, field_6: 18,    field_7: -2},
+    { id: 2, field_1: 'Feb', field_2: 5,   field_3: 27,   field_4:16, field_5: 13, field_6: 19,    field_7: 0},
+    { id: 3, field_1: 'Mar', field_2: 8,   field_3: 26,   field_4:18, field_5: 13, field_6: 19,    field_7: 6},
+    { id: 4, field_1: 'Apr', field_2: 10,  field_3: 24,   field_4:20, field_5: 14, field_6: 19,    field_7: 13},
+    { id: 5, field_1: 'May', field_2: 13,  field_3: 23,   field_4:20, field_5: 15, field_6: 18,    field_7: 18},
+    { id: 6, field_1: 'Jun', field_2: 17,  field_3: 22,   field_4:19, field_5: 16, field_6: 16,    field_7: 22},
+    { id: 7, field_1: 'Jul', field_2: 19,  field_3: 21,   field_4:18, field_5: 16, field_6: 16,    field_7: 25},
+    { id: 8, field_1: 'Aug', field_2: 19,  field_3: 22,   field_4:18, field_5: 17, field_6: 16,    field_7: 26},
+    { id: 9, field_1: 'Sep', field_2: 16,  field_3: 22,   field_4:18, field_5: 18, field_6: 17,    field_7: 21},
+    { id: 10, field_1: 'Oct', field_2: 12, field_3: 23,   field_4:17, field_5: 17, field_6: 19,    field_7: 15},
+    { id: 11, field_1: 'Nov', field_2: 8,  field_3: 24,   field_4:16, field_5: 14, field_6: 18,    field_7: 7},
+    { id: 12, field_1: 'Dec', field_2: 6,  field_3: 25,   field_4:15, field_5: 11, field_6: 18,    field_7: 4},
+  ]
 
   const updateRows = (rows, field, id, value) => {
     const updatedRows = []
@@ -91,13 +90,19 @@ function App() {
     { id: 6, label: colHeaders[7].headerName, data: rows.map(row => row.field_7)}, 
   ]
 
-  const [chart, setChart] = useState('BarChart')
+  const generateSampleData = () => {
+     setRows(sampleData)
+  }
+
+  const [chart, setChart] = useState('LineChart')
   
   return (
 
     <div className="App">
 
-      <Header handleCaptureClick={handleCaptureClick}/>
+      <Header handleCaptureClick={handleCaptureClick}
+              generateSampleData={generateSampleData}
+      />
 
       <div className='main'>
         <Navigation/>
