@@ -5,8 +5,8 @@ import TextForm from "../Forms/Text";
 import DropdownForm from "../Forms/Dropdown";
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setDisplay, setTitle, setColor, setFont, setFontSize, setPosition, setPointStyle, setBoxWidth,
-    setBoxHeight, setAlign, setPadding, setIsReversed } from '../../features/KeySlice'
+import { setDisplay, setPosition, setPointStyle, setPointSize,
+    setAlign, setPadding, setIsReversed } from '../../features/KeySlice'
 
 function KeyFieldset() {
 
@@ -39,9 +39,9 @@ function KeyFieldset() {
                 <p>Legend Labels</p>
                     <DropdownForm
                         lowerCase = {false}
-                        list={alignmentList}
-                        setValue = {setPosition}
-                        defautValue = {keyField.position}
+                        list={['test']}
+                        setValue = {0}
+                        defautValue = {0}
                         formSize = "medium" />
             </div>
 
@@ -67,7 +67,6 @@ function KeyFieldset() {
 
             <div class='field'>
                 <p>Pointer Style</p> 
-                
                     <DropdownForm
                             list={[
                                 'Circle',
@@ -79,13 +78,24 @@ function KeyFieldset() {
                                 'RectRounded',
                                 'RectRot',
                                 'Star',
-                                'Triangle'     
+                                'Triangle'
                             ]}
-                            setValue = {setAlign}
+                            lowerCase={true}
+                            setValue = {setPointStyle}
                             defautValue = {keyField.setPointStyle}
                             formSize = "medium" />
+            </div>
 
-
+            <div class='field'>
+                <p>Pointer Size</p>
+                    <input
+                        type='range'
+                        min={0} max={5}
+                        defaultValue={keyField.pointSize}
+                        onChange={(e)=>dispatch(setPointSize(e.target.value))}
+                        step='1'
+                    />
+        
             </div>
 
             <div class='field'>

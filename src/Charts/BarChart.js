@@ -48,9 +48,10 @@ const sampleData = [
   const options = {
     elements: {
       point: {
-        radius: "3",
-        pointStyle: 'cross'}
-      },
+        radius: keyField.pointSize,
+        pointStyle: `${keyField.pointStyle}`
+      }
+    },
     scales: {
       x: {
           title: {
