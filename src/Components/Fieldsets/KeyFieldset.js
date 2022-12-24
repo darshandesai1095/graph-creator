@@ -89,6 +89,7 @@ function KeyFieldset() {
             <div class='field'>
                 <p>Pointer Size</p>
                     <input
+                        className="slider"
                         type='range'
                         min={0} max={5}
                         defaultValue={keyField.pointSize}

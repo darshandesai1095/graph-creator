@@ -5,6 +5,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { useDispatch } from 'react-redux';
 
+//  #04AA6D;
+
 const CustomSwitch = styled((props) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
 ))(({ theme }) => ({
@@ -19,7 +21,7 @@ const CustomSwitch = styled((props) => (
       transform: 'translateX(16px)',
       color: '#fff',
       '& + .MuiSwitch-track': {
-        backgroundColor: theme.palette.mode === 'dark' ? '#2ECA45' : '#65C466', //#5465ff
+        backgroundColor: theme.palette.mode === 'dark' ? '#2ECA45' : 'rgba(83,188,137,0.9)', //#5465ff
         opacity: 1,
         border: 0,
       },
