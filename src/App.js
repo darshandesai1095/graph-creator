@@ -22,10 +22,7 @@ import {
 ChartJS.register(
   CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-
-// generate sample data
-// legend labels
-
+  
 function App() {
 
   const keyField = useSelector((state) => state.key.value)
