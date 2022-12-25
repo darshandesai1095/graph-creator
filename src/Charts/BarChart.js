@@ -16,31 +16,29 @@ function BarChart(props) { //change name to Chart
 
   // don't add col to 'data[]' if entire row is empty
   const data = []
-  for (let i=0; i<6; i++) {
+  for (let i=1; i<7; i++) {
     const col = props.datasets[i].data
     if (!(col.every( item => (item == null || item == "") ))) {
-      data.push(props.datasets[i])
+      data.push({...props.datasets[i]})
     }
   }
-  // console.log("DATA: ", data)
+
+  console.log("DATA: ", data)
   // London, Rio De Janeiro, CDMX, SF, Nairobi, Seoul
 
-const sampleData = [
-  {id: 1, label: 'B', data: ['5', '5', '8', '10', '13', '17', '19', '19', '16', '12', '8', '6']},
-  {id: 2, label: 'C', data: ['26', '27', '26', '24', '23', '22', '21', '22', '22', '23', '24', '25']},
-  {id: 3, label: 'D', data: ['15', '16', '18', '20', '20', '19', '18', '18', '18', '17', '16', '15']},
-  {id: 4, label: 'E', data: ['11', '13', '13', '14', '15', '16', '16', '17', '18', '17', '14', '11']},
-  {id: 5, label: 'F', data: ['18', '19', '19', '19', '18', '16', '16', '16', '17', '19', '18', '18']},
-  {id: 6, label: 'G', data: ['-2', '0', '6', '13', '18', '22', '25', '26', '21', '15', '7', '4']}
-]
-
-  // console.log("DATA: ", data)
-  // data[1].label = "ten"
+  const sampleData = [
+    {id: 1, label: 'B', data: ['5', '5', '8', '10', '13', '17', '19', '19', '16', '12', '8', '6']},
+    {id: 2, label: 'C', data: ['26', '27', '26', '24', '23', '22', '21', '22', '22', '23', '24', '25']},
+    {id: 3, label: 'D', data: ['15', '16', '18', '20', '20', '19', '18', '18', '18', '17', '16', '15']},
+    {id: 4, label: 'E', data: ['11', '13', '13', '14', '15', '16', '16', '17', '18', '17', '14', '11']},
+    {id: 5, label: 'F', data: ['18', '19', '19', '19', '18', '16', '16', '16', '17', '19', '18', '18']},
+    {id: 6, label: 'G', data: ['-2', '0', '6', '13', '18', '22', '25', '26', '21', '15', '7', '4']}
+  ]
 
   // don't add row to 'labels[]' if entire row is empty
   const labels = []
   for (let el of props.labels) {
-    if (el != "" && el != null) {
+    if (!(el == "" || el == null)) {
       labels.push(el)
     }
   }
@@ -100,7 +98,7 @@ const sampleData = [
       <Bar
         datasetIdKey='id'
         data={{
-          labels: labels,
+          labels: labels, // x-axis
           datasets: data
         }}
         options={options}

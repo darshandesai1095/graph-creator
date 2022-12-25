@@ -8,6 +8,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setDisplay, setPosition, setPointStyle, setPointSize,
     setAlign, setPadding, setIsReversed } from '../../features/KeySlice'
 
+import CustomizedAccordions from "../MUIComponents/Accordion";
+
 function KeyFieldset() {
 
     const keyField = useSelector((state) => state.key.value)
@@ -36,13 +38,7 @@ function KeyFieldset() {
             </div>
 
             <div class='field'>
-                <p>Legend Labels</p>
-                    <DropdownForm
-                        lowerCase = {false}
-                        list={['test']}
-                        setValue = {0}
-                        defautValue = {0}
-                        formSize = "medium" />
+                <CustomizedAccordions/>
             </div>
 
             <div class='field'>
@@ -86,7 +82,7 @@ function KeyFieldset() {
                             formSize = "medium" />
             </div>
 
-            <div class='field sliderContainer'>
+            <div class='field slide'>
                 <p>Pointer Size</p>
                     <input
                         className="slider"
@@ -99,7 +95,7 @@ function KeyFieldset() {
         
             </div>
 
-            <div class='field'>
+            <div class='field' style={{marginTop: '8px'}}>
                 <p>Reverse</p>
                 <input 
                     type="checkbox"

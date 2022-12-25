@@ -7,7 +7,13 @@ const initialState = {value: {
     pointSize: 3,
     align: 'Center',
     padding: 10,
-    isReversed: false
+    isReversed: false,
+    item1: "test",
+    item2: "",
+    item3: "",
+    item4: "",
+    item5: "",
+    item6: ""
 }}
 
 export const keySlice = createSlice({
@@ -35,10 +41,29 @@ export const keySlice = createSlice({
     },
     setIsReversed: (state) => {
         state.value.isReversed = !state.value.isReversed 
-    } 
+    },
+    setItem1: (state, action) => {
+        state.value.item1 = action.payload
+    },
+    setItem2: (state, action) => {
+        state.value.item2 = action.payload
+    },
+    setItem3: (state, action) => {
+        state.value.item3 = action.payload
+    },
+    setItem4: (state, action) => {
+        state.value.item4 = action.payload
+    },
+    setItem5: (state, action) => {
+        state.value.item5 = action.payload
+    },
+    setItem6: (state, action) => {
+        state.value.item6 = action.payload
+    },
   }
 })
 
 export const { setDisplay, fontSize, setPosition, setPointStyle, setPointSize,
-               setAlign, setPadding, setIsReversed } = keySlice.actions
+               setAlign, setPadding, setIsReversed, setItem1, setItem2, setItem3,
+               setItem4, setItem5, setItem6 } = keySlice.actions
 export default keySlice.reducer

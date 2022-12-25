@@ -38,7 +38,6 @@ function setTableRows() {
                 field_9: null,
                 field_10: null,
                 field_11: null,
-                field_12: null,
                 field_12: null
         }
         rows.push(row)

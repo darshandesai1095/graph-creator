@@ -3,6 +3,9 @@ import { React, useState } from 'react';
 import Navigation from './Components/Navigation';
 import * as SS from './Functions/CreateSpreasheet';
 import { Routes, Route } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
+import { setItem1, setItem2, setItem3, setItem4, setItem5, setItem6} from './features/KeySlice'
+
 
 import Header from './Components/Header';
 import SelectChart from './Pages/SelectChart';
@@ -25,6 +28,9 @@ ChartJS.register(
 // legend labels
 
 function App() {
+
+  const keyField = useSelector((state) => state.key.value)
+  const dispatch = useDispatch()
 
   const handleCaptureClick = async () => {
     const canvas = await html2canvas(document.getElementsByClassName("main-content__chart")[0])
@@ -81,21 +87,33 @@ function App() {
   const labels = rows.map(row => row[Object.keys(row)[1]])
 
   const data = [
-    // { id: 0, label: colHeaders[1].headerName, data: rows.map(row => row.field_1)}, 
-    { id: 1, label: colHeaders[2].headerName, data: rows.map(row => row.field_2)}, 
-    { id: 2, label: colHeaders[3].headerName, data: rows.map(row => row.field_3)}, 
-    { id: 3, label: colHeaders[4].headerName, data: rows.map(row => row.field_4)}, 
-    { id: 4, label: colHeaders[5].headerName, data: rows.map(row => row.field_5)}, 
-    { id: 5, label: colHeaders[6].headerName, data: rows.map(row => row.field_6)}, 
-    { id: 6, label: colHeaders[7].headerName, data: rows.map(row => row.field_7)}, 
+    { id: 0, label: colHeaders[1].headerName, data: rows.map(row => row.field_1)}, 
+    { id: 1, label: keyField.item1, data: rows.map(row => row.field_2)}, 
+    { id: 2, label: keyField.item2, data: rows.map(row => row.field_3)}, 
+    { id: 3, label: keyField.item3, data: rows.map(row => row.field_4)}, 
+    { id: 4, label: keyField.item4, data: rows.map(row => row.field_5)}, 
+    { id: 5, label: keyField.item5, data: rows.map(row => row.field_6)}, 
+    { id: 6, label: keyField.item6, data: rows.map(row => row.field_7)}, 
   ]
 
   const generateSampleData = () => {
     setRows(sampleData)
+    dispatch(setItem1("LDN"))
+    dispatch(setItem2("RIO"))
+    dispatch(setItem3("MEX"))
+    dispatch(setItem4("SFO"))
+    dispatch(setItem5("NBO"))
+    dispatch(setItem6("SEL"))
   }
 
   const clearTable = () => {
     setRows(SS.setTableRows())
+    dispatch(setItem1(""))
+    dispatch(setItem2(""))
+    dispatch(setItem3(""))
+    dispatch(setItem4(""))
+    dispatch(setItem5(""))
+    dispatch(setItem6(""))
   }
 
   const [chart, setChart] = useState('LineChart')
