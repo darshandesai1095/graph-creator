@@ -6,7 +6,6 @@ import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { setItem1, setItem2, setItem3, setItem4, setItem5, setItem6} from './features/KeySlice'
 
-
 import Header from './Components/Header';
 import SelectChart from './Pages/SelectChart';
 import Grid from './Pages/Grid';
