@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Bar, Pie, Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 import { useSelector } from 'react-redux'
@@ -11,7 +11,7 @@ function BarChart(props) { //change name to Chart
   const axesField = useSelector((state) => state.axes.value)
   const descriptionField = useSelector((state) => state.description.value)
 
-  // run function on props.labels and props.datasets...
+
   // if entire row or col is empty -> drop
 
   // don't add col to 'data[]' if entire row is empty

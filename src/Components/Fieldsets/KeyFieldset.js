@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import '../../Components/Fieldsets/Fieldsets.css'
 import CustomizedSwitch from "../MUIComponents/CustomizedSwitch";
-import TextForm from "../Forms/Text";
 import DropdownForm from "../Forms/Dropdown";
-
 import { useSelector, useDispatch } from 'react-redux'
 import { setDisplay, setPosition, setPointStyle, setPointSize,
-    setAlign, setPadding, setIsReversed } from '../../features/KeySlice'
-
+    setAlign, setIsReversed } from '../../features/KeySlice'
 import CustomizedAccordions from "../MUIComponents/Accordion";
 
 function KeyFieldset() {

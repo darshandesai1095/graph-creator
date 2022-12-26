@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import '../../Components/Fieldsets/Fieldsets.css'
 import CustomizedSwitch from "../MUIComponents/CustomizedSwitch";
 import TextForm from "../Forms/Text";
@@ -7,7 +7,7 @@ import ColorPickerForm from "../Forms/ColorPicker";
 
 import { useSelector } from 'react-redux'
 import { setDisplay, setTitle, setFont, setColor, setFontSize, setPosition,
-    setPaddingTop, setPaddingBottom, setPaddingLeft, setPaddingRight } from '../../features/TitleSlice'
+    setPaddingTop, setPaddingBottom } from '../../features/TitleSlice'
 
 function TitleFieldset() {
 
@@ -75,8 +75,7 @@ function TitleFieldset() {
 
             <div class='field'>
                 <p>Position</p>
-                    <DropdownForm
-                        lowerCase = {true}                   
+                    <DropdownForm                 
                         list={alignmentList}
                         setValue = {setPosition}
                         defautValue = {titleField.position}

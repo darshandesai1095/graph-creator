@@ -22,7 +22,7 @@ import {
 ChartJS.register(
   CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-  
+
 function App() {
 
   const keyField = useSelector((state) => state.key.value)
@@ -33,9 +33,6 @@ function App() {
     const dataURL = canvas.toDataURL('image/png')
     downloadjs(dataURL, 'download.png', 'image/png')
   }
-
-  // INPUT DATA -> e.g. csv, pasted, typed, etc
-  // these have to be created using useState as the can be updated
 
   const [colHeaders, setColHeaders] = useState(SS.setTableColumns())
   // const [colHeaders, setColHeaders] = useState([
@@ -48,7 +45,6 @@ function App() {
   //   { field: 'field_6', headerName: '5', width: 100,  editable: true },
   //   { field: 'field_7', headerName: '6', width: 100,  editable: true },
   // ])
-
 
   const [rows, setRows] = useState(SS.setTableRows())
   const sampleData = [
