@@ -16,7 +16,7 @@ function Navigation() {
     return (
         <div className='navigation'>
             
-            <NavLink to="/select-chart" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
+            <NavLink to="/" style={({ isActive }) => isActive ? activeStyle : notActiveStyle}>
                 <div>
                     <Tooltip title="Select Chart" arrow placement='right'>
                         <CategoryOutlinedIcon sx={style}/>
