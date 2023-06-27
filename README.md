@@ -1,4 +1,4 @@
-## Project Title
+### Project Title
 Graph Creator
 
 ### Project Description
