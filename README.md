@@ -10,21 +10,9 @@
 
 > https://gentle-chimera-e87178.netlify.app/
 
-## CodeSandbox
-
-> -
-
-## Screenshots
-
-> -
-
 ## Technologies Used
 
 > React JS, Redux-Toolkit, Chart JS, Material UI
-
-## Future Improvements
-
-> -
 
 ## Contact Information
 
