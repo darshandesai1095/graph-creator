@@ -16,4 +16,4 @@ React JS, Redux-Toolkit, Chart JS, Material UI
 <img width="700" alt="Graph Creator - Customize Graph" src="https://github.com/darshandesai1095/graph-creator/assets/43254178/c1a617b9-ca6a-41aa-8ad2-b5a3bb56af0a">
 
 ### Contact Information
-Email: darshandesai1095@gmail.com
+Email: darshandesai1995@gmail.com
