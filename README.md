@@ -1,6 +1,5 @@
-# Project Title
-
-> Graph Creator
+## Project Title
+Graph Creator
 
 ### Project Description
 A graph creator site inspired by ChartBlocks. The application allows users to easily create and customize bar charts, line charts, and pie charts, which can be downloaded
